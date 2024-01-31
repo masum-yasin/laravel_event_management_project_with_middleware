@@ -63,20 +63,26 @@
                     </div>
                        
                 </div>
-
+               
+                    
+           
                 <div class="col-lg-5 ps-lg-4 mb-4">
+                
                     <div class="product-slider position-relative">
                         <div class="slider-for overflow-hidden">
                             <div>
                                 <div class="gallery-item">
                                     <div class="gallery-image position-relative">
-                                        <img src="{{asset('frontend/assets/images/products/Yellow Cloth Puff.H03.2k.png')}}" alt="image">
+                                        <img src="{{asset('uploads/'.$eventtype->image)}}" alt="image">
+                                      
                                         <a href="{{asset('frontend/assets/images/products/Yellow Cloth Puff.H03.2k.png')}}" data-lightbox="gallery" class="gallery_trigger">
                                             <i class="fa fa-search"></i>
                                         </a>
                                     </div>
                                 </div>
                             </div>
+                                      
+                          
                             <div>
                                 <div class="gallery-item">
                                     <div class="gallery-image position-relative">
@@ -137,6 +143,7 @@
                         </div>
                     </div>
                 </div>
+   
 
             </div>
         </div>
@@ -163,7 +170,7 @@
                             <!-- popular posts -->
                             <div aria-labelledby="description-tab" class="tab-pane fade active show" id="description" role="tabpanel">
                                 <h3>Event Description</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                <p>{{$eventtype->description}}</p>
                                     
                             </div>
                             <!-- Recent posts -->
@@ -182,6 +189,7 @@
                                         <span class="fa fa-star checked"></span>
                                     </div>
                                 </div> 
+                        
                                 <form>
                                     <div class="form-group">
                                         <Label>Comment*</Label>

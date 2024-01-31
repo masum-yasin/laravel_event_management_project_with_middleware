@@ -67,9 +67,9 @@
                             </li>
                         </ul>
                     </div><!-- /.navbar-collapse -->  
-                    <div class="register-login">
-                        <a href="{{route('frontend.eventbooking')}}" class="nir-btn white">Booking Now<i class="fa fa-angle-right "></i></a>
-                    </div>
+                   <div class="register-login">
+                        <a href="" class="nir-btn white">Booking Now<i class="fa fa-angle-right "></i></a>
+                    </div> 
                    
 
                     <div id="slicknav-mobile"></div>

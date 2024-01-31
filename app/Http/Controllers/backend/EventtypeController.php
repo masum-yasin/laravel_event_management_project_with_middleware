@@ -40,6 +40,7 @@ class EventtypeController extends Controller
             'image'=>'mimes:jpg,jpeg,png',
             'price'=>'required:numeric',
             'description'=>'required|min:5',
+            'event_name'=>'required|min:4'
             
         ]);
         $filename = time(). "." . $request->image->extension();
@@ -50,6 +51,7 @@ class EventtypeController extends Controller
                 'price'=> $request->price,
                 'description'=> $request->description,
                 'availibility' => $request->availibility,
+                'event_name'=>$request->event_name
             ];
             $model = new Eventtype();
             if($model->create($data));
@@ -89,6 +91,7 @@ class EventtypeController extends Controller
             'image'=>'mimes:jpg,jpeg,png',
             'price'=>'required:numeric',
             'description'=>'required|min:5',
+            'event_name'=>'required|min:4'
             
         ]);
         $filename = time(). "." . $request->image->extension();
@@ -99,6 +102,7 @@ class EventtypeController extends Controller
                 'price'=> $request->price,
                 'description'=> $request->description,
                 'availibility' => $request->availibility,
+                'event_name'=>$request->event_name
             ];
            
             $eventtype->update($data);

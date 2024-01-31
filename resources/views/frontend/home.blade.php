@@ -245,12 +245,12 @@
                     </div>
                     <div class="col-lg-6 d-flex">
                         <div class="schedule-content text-lg-start text-center py-4">
-                            <a href="event/details/{{$item->id}}"><h4 class="mb-1">{{$item->eventype}}</h4></a>
-                            <p class="mb-3">{{$item->description}}</p>
+                            <a href="event/details/{{$item->id}}"><h3 class="mb-1"> {{$item->category->name}}</h3></a>
+                            
                             <ul class="schedule-items d-flex justify-content-lg-start justify-content-center">
                                 <li class="d-flex align-items-center me-4">
                                     <i  class="icon-location-pin theme pe-1"></i>
-                                    <strong class="theme1" style="font-size: 20px"><a href="{{route('frontend.eventbooking')}}">Event Details</a></strong>
+                                    <strong class="theme1" style="font-size: 20px"><a href="{{route('frontend.eventbooking',$item->id)}}">Event Details</a></strong>
                                 </li>
                                 <li class="d-flex align-items-center">
                                     <i  class="icon-location-pin theme pe-1"></i>

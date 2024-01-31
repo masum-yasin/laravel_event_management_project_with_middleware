@@ -44,6 +44,7 @@
 							<tr>
 								<th scope="col">#ID</th>
 								<th scope="col">Event Type</th>
+								<th scope="col">Event Name</th>
 								<th scope="col">Image</th>
 								<th scope="col">Price</th>
 								<th scope="col">Availibility</th>
@@ -58,6 +59,7 @@
 							<tr>
 								<th scope="row">{{++$key}}</th>
 								<td>{{$item->category->name}}</td>
+								<td>{{$item->event_name}}</td>
 								<td><img src="{{asset('uploads/'.$item->image)}}" alt="Image" width="50px" height="50px"></td>
 								<td>{{$item->price}}</td>
 								<td>{{$item->availibility }}</td>

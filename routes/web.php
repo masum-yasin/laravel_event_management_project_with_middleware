@@ -53,8 +53,8 @@ Route::get('/frontend/eventschedule', function(){
 //frontend Routes Ending//
 //pass data frontend from backend//
 Route::get('/', [FrontendHomeController::class,'index']);
-Route::get('/event/details/{id}',[DetailsController::class,'index']);
-Route::get('frontend/eventbooking', [EventBookingController::class,'Eventbooking'])->name('frontend.eventbooking');
+
+Route::get('frontend/eventbooking/{id}', [EventBookingController::class,'Eventbooking'])->name('frontend.eventbooking');
 
 
 

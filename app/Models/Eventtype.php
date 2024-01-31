@@ -12,7 +12,7 @@ class Eventtype extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'category_id','image','price','description','availibility'
+        'category_id','image','price','description','availibility','event_name'
     ];
     public function category(): BelongsTo
     {

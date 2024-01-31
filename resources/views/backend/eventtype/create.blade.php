@@ -42,6 +42,12 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label class="col-sm-12 col-md-2 col-form-label">Event Name</label>
+                                    <div class="col-sm-12 col-md-10">
+                                        <input class="form-control" type="text" placeholder="Enter Event Name" name="event_name">
+                                    </div>
+                                </div>
+                            <div class="form-group row">
                                 <label class="col-sm-12 col-md-2 col-form-label">Price</label>
                                     <div class="col-sm-12 col-md-10">
                                         <input class="form-control" type="text" placeholder="Enter Event Price" name="price" value="{{old('price')}}">
