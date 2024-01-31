@@ -245,27 +245,24 @@
                     </div>
                     <div class="col-lg-6 d-flex">
                         <div class="schedule-content text-lg-start text-center py-4">
-                            <a href="event/details/{{$item->id}}"><h3 class="mb-1"> {{$item->category->name}}</h3></a>
+                            <a href="event/details/{{$item->id}}"><h4 class="mb-1"> {{$item->category->name}}</h4></a>
                             
                             <ul class="schedule-items d-flex justify-content-lg-start justify-content-center">
                                 <li class="d-flex align-items-center me-4">
                                     <i  class="icon-location-pin theme pe-1"></i>
                                     <strong class="theme1" style="font-size: 20px"><a href="{{route('frontend.eventbooking',$item->id)}}">Event Details</a></strong>
                                 </li>
-                                <li class="d-flex align-items-center">
-                                    <i  class="icon-location-pin theme pe-1"></i>
-                                    <span class="theme1">Hall 01</span>
-                                </li>
+                               
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-3 d-flex">
                         <div class="schedule-speaker d-lg-flex p-4 align-items-center text-center text-lg-start w-100 border-start">
-                            <img src="{{asset('uploads/'.$item->image)}}" alt="Image" width="50px" height="50px" class="rounded-circle img-circle">
+                            <img src="{{asset('uploads/'.$item->image)}}" alt="Image" style="width:100px; height:100px;" class="rounded-circle img-circle">
                             {{-- <img src="frontend/assets/images/reviewer/1.jpg" alt="" class="rounded-circle img-circle"> --}}
                             <div class="speaker-content ms-3">
-                                <h6 class="mb-0 theme"> Evetn Price {{$item->price}}</h6>
-                                <small>Host & Speaker</small>
+                                <h4 class="mb-0 theme"> Evetn Price {{$item->price}}</h4>
+                                
                             </div>
                         </div>
                     </div>

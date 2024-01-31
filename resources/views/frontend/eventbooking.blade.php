@@ -75,7 +75,7 @@
                                     <div class="gallery-image position-relative">
                                         <img src="{{asset('uploads/'.$eventtype->image)}}" alt="image">
                                       
-                                        <a href="{{asset('frontend/assets/images/products/Yellow Cloth Puff.H03.2k.png')}}" data-lightbox="gallery" class="gallery_trigger">
+                                        <a href="" data-lightbox="gallery" class="gallery_trigger">
                                             <i class="fa fa-search"></i>
                                         </a>
                                     </div>
@@ -86,8 +86,8 @@
                             <div>
                                 <div class="gallery-item">
                                     <div class="gallery-image position-relative">
-                                        <img src="{{asset('frontend/assets/images/products/Picnic Basket.H03.2k.png')}}" alt="image">
-                                        <a href="{{asset('frontend/assets/images/products/Picnic Basket.H03.2k.png')}}" data-lightbox="gallery" class="gallery_trigger">
+                                        <img src="{{asset('uploads/'.$eventtype->image)}}}}" alt="image">
+                                        <a href="" data-lightbox="gallery" class="gallery_trigger">
                                             <i class="fa fa-search"></i>
                                         </a>
                                     </div>
@@ -96,7 +96,7 @@
                             <div>
                                 <div class="gallery-item">
                                     <div class="gallery-image position-relative">
-                                        <img src="{{asset('frontend/assets/images/products/Summer Cloth.H03.2k.png')}}" alt="image">
+                                        <img src="{{asset('uploads/'.$eventtype->image)}}" alt="image">
                                         <a href="{{asset('frontend/assets/images/products/Summer Cloth.H03.2k.png')}}" data-lightbox="gallery" class="gallery_trigger">
                                             <i class="fa fa-search"></i>
                                         </a>
@@ -106,8 +106,8 @@
                             <div>
                                 <div class="gallery-item">
                                     <div class="gallery-image position-relative">
-                                        <img src="{{asset('frontend/assets/images/products/T-Shirt.H03.2k.png')}}" alt="image">
-                                        <a href="{{asset('frontend/assets/images/products/T-Shirt.H03.2k.png')}}" data-lightbox="gallery" class="gallery_trigger">
+                                        <img src="{{asset('uploads/'.$eventtype->image)}}" alt="image">
+                                        <a href="" data-lightbox="gallery" class="gallery_trigger">
                                             <i class="fa fa-search"></i>
                                         </a>
                                     </div>
@@ -116,7 +116,7 @@
                             <div>
                                 <div class="gallery-item">
                                     <div class="gallery-image position-relative">
-                                        <img src="{{asset('frontend/assets/images/products/Travel Bag.H03.2k.png')}}" alt="image">
+                                        <img src="{{asset('uploads/'.$eventtype->image)}}" alt="image">
                                         <a href="{{asset('frontend/assets/images/products/Travel Bag.H03.2k.png')}}" data-lightbox="gallery" class="gallery_trigger">
                                             <i class="fa fa-search"></i>
                                         </a>
@@ -126,19 +126,19 @@
                         </div>
                         <div class="slider-nav bg-white">
                             <div>
-                                <img src="{{asset('frontend/assets/images/products/Yellow Cloth Puff.H03.2k.png')}}" alt="image">
+                                <img src="{{asset('uploads/'.$eventtype->image)}}" alt="image">
                             </div>
                             <div>
-                                <img src="{{asset('frontend/assets/images/products/Picnic Basket.H03.2k.png')}}" alt="image">
+                                <img src="{{asset('uploads/'.$eventtype->image)}}" alt="image">
                             </div>
                             <div>
-                                <img src="{{asset('frontend/assets/images/products/Summer Cloth.H03.2k.png')}}" alt="image">
+                                <img src="{{asset('uploads/'.$eventtype->image)}}" alt="image">
                             </div>
                             <div>
-                                <img src="{{asset('frontend/assets/images/products/T-Shirt.H03.2k.png')}}" alt="image">
+                                <img src="{{asset('uploads/'.$eventtype->image)}}" alt="image">
                             </div>
                             <div>
-                                <img src="{{asset('frontend/assets/images/products/Travel Bag.H03.2k.png')}}" alt="image">
+                                <img src="{{asset('uploads/'.$eventtype->image)}}" alt="image">
                             </div>
                         </div>
                     </div>
@@ -216,14 +216,14 @@
 
                 <div class="col-lg-4 ps-lg-4 mb-4">
                     <div class="sidebar-item mb-4 bg-white p-4">
-                        <h5 class="bg-grey p-3 mb-4">Recent products</h5>
+                        <h5 class="bg-grey p-3 mb-4">Recent Events</h5>
                         <article class="post mb-2 bg-grey">
                             <div class="s-content d-flex align-items-center justify-space-between">
                                 <div class="sidebar-image w-25 me-3 rounded">
-                                    <a href="product-detail.html"><img src="{{asset('frontend/assets/images/products/Yellow Cloth Puff.H03.2k.png')}}" alt=""></a>
+                                    <a href="product-detail.html"><img src="{{asset('frontend/assets/images/recent (3).jpg')}}" alt=""></a>
                                 </div>
                                 <div class="content-list w-75">
-                                    <h6 class="mb-1"><a href="product-detail.html">Yellow Sofa Set</a></h6>
+                                    <h6 class="mb-1"><a href="product-detail.html">Engaging Evening</a></h6>
                                     <div class="date small">10 Apr 2024</div>
                                 </div>    
                             </div> 
@@ -232,10 +232,10 @@
                         <article class="post mb-2 bg-grey">
                             <div class="s-content d-flex align-items-center justify-space-between">
                                 <div class="sidebar-image w-25 me-3 rounded">
-                                    <a href="product-detail.html"><img src="{{asset('frontend/assets/images/products/Travel Bag.H03.2k.png')}}" alt=""></a>
+                                    <a href="product-detail.html"><img src="{{asset('frontend/assets/images/recent (5).jpg')}}" alt=""></a>
                                 </div>
                                 <div class="content-list w-75">
-                                    <h6 class="mb-1"><a href="product-detail.html">leather Bag</a></h6>
+                                    <h6 class="mb-1"><a href="product-detail.html">Effervescent Event</a></h6>
                                     <div class="date small">10 Apr 2024</div>
                                 </div>    
                             </div> 
@@ -243,11 +243,11 @@
                         <article class="post mb-2 bg-grey">
                             <div class="s-content d-flex align-items-center justify-space-between">
                                 <div class="sidebar-image w-25 me-3 rounded">
-                                    <a href="product-detail.html"><img src="{{asset('frontend/assets/images/products/Picnic Basket.H03.2k.png')}}" alt=""></a>
+                                    <a href="product-detail.html"><img src="{{asset('frontend/assets/images/recent (6).jpg')}}" alt=""></a>
                                 </div>
                                 <div class="content-list w-75">
-                                    <h6 class="mb-1"><a href="product-detail.html">Bamboo Bucket</a></h6>
-                                    <div class="date small">10 Apr 2023</div>
+                                    <h6 class="mb-1"><a href="product-detail.html">Unforgettable Affair</a></h6>
+                                    <div class="date small">10 Apr 2024</div>
                                 </div>    
                             </div> 
                         </article>
@@ -255,11 +255,11 @@
                         <article class="post bg-grey">
                             <div class="s-content d-flex align-items-center justify-space-between">
                                 <div class="sidebar-image w-25 me-3 rounded">
-                                    <a href="product-detail.html"><img src="{{asset('frontend/assets/images/products/T-Shirt.H03.2k.png')}}" alt=""></a>
+                                    <a href="product-detail.html"><img src="{{asset('frontend/assets/images/recent (7).jpg')}}" alt=""></a>
                                 </div>
                                 <div class="content-list w-75">
-                                    <h6 class="mb-1"><a href="product-detail.html">Lewis Shirt</a></h6>
-                                    <div class="date small">10 Apr 2023</div>
+                                    <h6 class="mb-1"><a href="product-detail.html">The Perfect Party</a></h6>
+                                    <div class="date small">10 Apr 2024</div>
                                 </div>    
                             </div> 
                         </article>
