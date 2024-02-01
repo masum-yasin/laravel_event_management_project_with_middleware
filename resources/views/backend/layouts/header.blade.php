@@ -111,18 +111,7 @@
                     </span>
                     <span class="user-name">
                         {{$user->name ?? auth()->user()->name}}
-                        {{-- @switch(auth())
-                            
-                            @case(auth()->guard('editor'))
-                            {{auth()->guard('editor')->user()->name}}
-                                @break
-                            @case(auth()->guard('admin'))
-                            {{auth()->guard('admin')->user()->name}}
-                                @break
-                                @default
-                                {{auth()->user()->name}}
-                            
-                        @endswitch --}}
+                       
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
