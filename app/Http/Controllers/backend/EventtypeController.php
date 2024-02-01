@@ -51,7 +51,8 @@ class EventtypeController extends Controller
                 'price'=> $request->price,
                 'description'=> $request->description,
                 'availibility' => $request->availibility,
-                'event_name'=>$request->event_name
+                'event_name'=>$request->event_name,
+                'categories_id'=>$request->category
             ];
             $model = new Eventtype();
             if($model->create($data));
@@ -102,7 +103,8 @@ class EventtypeController extends Controller
                 'price'=> $request->price,
                 'description'=> $request->description,
                 'availibility' => $request->availibility,
-                'event_name'=>$request->event_name
+                'event_name'=>$request->event_name,
+                'categories_id'=>$request->category
             ];
            
             $eventtype->update($data);

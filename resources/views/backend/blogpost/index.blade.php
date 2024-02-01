@@ -30,7 +30,7 @@
 			
 		<!-- Striped table start -->
                 @if (session('msg'))
-                    <div class="div-alert-success">
+                    <div class="alert alert-success">
                             {{session('msg')}}
                     </div>
                 @endif

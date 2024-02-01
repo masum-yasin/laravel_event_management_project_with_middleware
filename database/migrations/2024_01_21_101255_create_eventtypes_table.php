@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('eventtypes', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('category_id');
+            $table->tinyInteger('categories_id');
             $table->string('event_name')->nullable();
             $table->string('image', 50)->nullable();
             $table->decimal('price',10);

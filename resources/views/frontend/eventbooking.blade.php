@@ -27,9 +27,20 @@
                         </ol>
                       </nav>
                       <div class="single-add-review mb-4 text-center text-lg-start">
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{$error}}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                            
+                        @endif
                         <h2 class="text-center text-lg-start">Event Booking Now</h2>
                         
-                        <form>
+                        <form method="post" action="{{route('booking.store')}}" enctype="multipart/form-data">
+                            @csrf
                             
                             <div class="form-group mb-2">
                                 <Label>Name*</Label>
@@ -41,11 +52,19 @@
                             </div>
                             <div class="form-group mb-2">
                                 <Label>Phone Number*</Label>
-                                <input type="number" placeholder="" name="number">
+                                <input type="number" placeholder="" name="phone">
                             </div>
                             <div class="form-group mb-2">
-                                <Label>Subject*</Label>
-                                <input type="text" placeholder="">
+                                <Label>Event Category*</Label>
+                                <input type="text" placeholder="" name="event_name">
+                            </div>
+                            <div class="form-group mb-2">
+                                <Label>Event Catalog*</Label>
+                                <input type="file" placeholder="" name="event_catalog">
+                            </div>
+                            <div class="form-group mb-2">
+                                <Label>Number of Person*</Label>
+                                <input type="text" placeholder="" name="member">
                             </div>
                             <div class="form-group mb-2">
                                 <Label>Description*</Label>

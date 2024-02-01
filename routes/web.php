@@ -3,7 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EditorController;
 
-use App\Http\Controllers\frontend\DetailsController;
+
 use App\Http\Controllers\frontend\EventBookingController;
 use App\Http\Controllers\frontend\FrontendHomeController;
 use App\Http\Controllers\ProfileController;
@@ -54,7 +54,12 @@ Route::get('/frontend/eventschedule', function(){
 //pass data frontend from backend//
 Route::get('/', [FrontendHomeController::class,'index']);
 
-Route::get('frontend/eventbooking/{id}', [EventBookingController::class,'Eventbooking'])->name('frontend.eventbooking');
+Route::get('frontend/eventbooking/{id}', [EventBookingController::class,'create'])->name('frontend.eventbooking');
+Route::post('booking/store',[EventBookingController::class,'store'])->name('booking.store');
+Route::get('booking/edit/{id}',[EventBookingController::class,'edit'])->name('booking.edit');
+Route::post('booking/update/{id}',[EventBookingController::class,'update'])->name('booking.update');
+Route::get('booking/delete/{id}',[EventBookingController::class,'delete'])->name('booking.delete');
+
 
 
 
