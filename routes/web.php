@@ -7,6 +7,7 @@ use App\Http\Controllers\EditorController;
 use App\Http\Controllers\frontend\EventBookingController;
 use App\Http\Controllers\frontend\FrontendHomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VolunteerController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -80,10 +81,21 @@ Route::middleware('auth')->group(function () {
 Route::get('editor/login',[EditorController::class,'login'])->name('editor_login_form');
 Route::post('editor/login',[EditorController::class,'store'])->name('EditorLogin');
 Route::get('editor/edashobard/{type}',[EditorController::class,'edashboard'])->name('editor.edashboard')->middleware('editor');
+
+
+
+
 //Admin MiddleWare//
 Route::get('admin/login',[AdminController::class,'login'])->name('admin_login_form');
 Route::post('admin/store',[AdminController::class,'store'])->name('AdminLogin');
 Route::get('admin/dashboard/{type}',[AdminController::class,'adashboard'])->name('admin.dashboard')->middleware('admin');
+
+
+
+// Volunteer Middleware
+Route::get('volunteer/login',[VolunteerController::class,'login'])->name('volunteer_login_form');
+Route::post('volunteer/store',[VolunteerController::class,'store'])->name('volunteerLogin');
+Route::get('volunteer/voldashboard/{type}',[VolunteerController::class,'voldashboard'])->name('volunteer.voldashboard')->middleware('volunteer');
 
 
 require __DIR__.'/auth.php';

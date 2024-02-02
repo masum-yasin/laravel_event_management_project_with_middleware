@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class Editor
+
+class Volunteer
 {
     /**
      * Handle an incoming request.
@@ -16,10 +17,9 @@ class Editor
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!Auth::guard('editor')->check()){
-            return redirect()->route('editor_login_form')->with('error','Login first');
+        if(!Auth::guard('volunteer')->check()){
+            return redirect()->route('volunteer_login_form')->with('error','Login first');
         }
-        // return $next($request);
         return $next($request);
     }
 }
