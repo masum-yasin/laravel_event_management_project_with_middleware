@@ -1,6 +1,6 @@
-<div id="preloader">
+{{-- <div id="preloader">
     <div id="status"></div>
-</div>
+</div> --}}
 <!-- Preloader Ends -->
 
 <!-- header starts -->
@@ -67,14 +67,20 @@
                             </li>
                         </ul>
                     </div><!-- /.navbar-collapse -->  
-                   <div class="register-login">
-                        <a href="" class="nir-btn white">Booking Now<i class="fa fa-angle-right "></i></a>
-                    </div> 
+                   {{-- <div class="register-login">
+                        <a href="" class="nir-btn white">Booking Now<i class="fa fa-angle-right " style="width:20px;"></i></a>
+                    </div> --}}
                    
 
                     <div id="slicknav-mobile"></div>
                     <div>
-                        <a href="{{route('dashboard')}}" class="btn btn-warning p-3" style="width: 100px;">Admin</a>
+                        <a href="{{route('dashboard')}}" class="btn btn-warning" style="width:100px; ">super Admin</a>
+                    </div>
+                    <div>
+                        <a href="{{route('editor_login_form')}}" class="btn btn-warning p-3" style="width:100px;">Admin</a>
+                    </div>
+                    <div>
+                        <a href="{{route('admin_login_form')}}" class="btn btn-warning p-3" style="width:100px;">Editor</a>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->

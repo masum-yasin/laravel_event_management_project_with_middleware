@@ -55,11 +55,15 @@ Route::get('/frontend/eventschedule', function(){
 //pass data frontend from backend//
 Route::get('/', [FrontendHomeController::class,'index']);
 
+
+// Frontend Booking//
+Route::get('frontend/booking', [EventBookingController::class,'index'])->name('booking.index');
+Route::post('booking/status/{id}', [EventBookingController::class,'status'])->name('booking.status');
 Route::get('frontend/eventbooking/{id}', [EventBookingController::class,'create'])->name('frontend.eventbooking');
-Route::post('booking/store',[EventBookingController::class,'store'])->name('booking.store');
-Route::get('booking/edit/{id}',[EventBookingController::class,'edit'])->name('booking.edit');
-Route::post('booking/update/{id}',[EventBookingController::class,'update'])->name('booking.update');
-Route::get('booking/delete/{id}',[EventBookingController::class,'delete'])->name('booking.delete');
+Route::post('booking/store', [EventBookingController::class, 'store'])->name('booking.store');
+Route::get('booking/edit/{id}',[EventBookingController::class,'delete'])->name('booking.delete');
+
+Route::get('booking/delete/{id}',[EventBookingController::class,'delete'])->name('frontend.booking');
 
 
 

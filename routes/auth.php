@@ -20,6 +20,7 @@ use App\Http\Controllers\backend\ScheduleController;
 use App\Http\Controllers\backend\SpeakerController;
 use App\Http\Controllers\backend\SponsorController;
 use App\Http\Controllers\backend\VenueController;
+use App\Http\Controllers\frontend\ReviewController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -89,10 +90,10 @@ Route::middleware('auth')->group(function () {
     //  Route::get('contact/create', [ContactController::class,'create'])->name('contact.create');
     //  Route::post('contact/store',[ContactController::class,'store'])->name('contact.store');
 
-                    // Employee Evant Categories Route resource 
+    // Here are resource Routing Start//
 
-        // Route::resource('evantcategories',EmplyEvantCategoryController::class);
-        Route::resource('employeelist',EmplyEvantController::class);
+    // Employee Evant Categories Route resource 
+    Route::resource('employeelist',EmplyEvantController::class);
 
        // Eventtype Route Show for frontend 
        Route::resource('eventtype',EventtypeController::class);
@@ -106,6 +107,7 @@ Route::middleware('auth')->group(function () {
         Route::resource('eventvenues',VenueController::class);
         // event Routing//
         Route::resource('eventspeaker',SpeakerController::class);
+        Route::resource('userreview',ReviewController::class);
 
 });
     

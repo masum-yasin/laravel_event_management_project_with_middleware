@@ -12,15 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bookings', function (Blueprint $table) {
-            $table->string('customer_name',60);
+            $table->id();
+             $table->string('customer_name',60);
             $table->string('email',100)->nullable();
-            $table->integer('phone',100);
+            $table->integer('phone_number');
             $table->string('event_catalog',100)->nullable();
             $table->string('description',500);
             $table->string('member');
             $table->string('event_category',100);
             $table->text('address',200);
-            $table->tinyInteger('status')->default('0');
+            $table->boolean('status')->default(0);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
         });

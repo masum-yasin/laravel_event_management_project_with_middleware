@@ -3,32 +3,39 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Booking;
 use App\Models\Category;
-use App\Models\EventBooking;
 use App\Models\Eventtype;
 use Illuminate\Http\Request;
 
 
+
 class EventBookingController extends Controller
 {
+    
+    public function index(){
+        $bookings = Booking::get();
+        return view('frontend.booking.index',compact('bookings'));
+    }
 
 
     public function create($id){
    
         $eventtype = Eventtype::find($id);
       
-        return view('frontend.eventbooking',compact('eventtype'));
+        return view('frontend.booking.eventbooking',compact('eventtype'));
     }
     public function store(Request $request){
+
+        // dd($request->all());
         
         
         $validate = $request->validate([
-            'name'=>'required|min:4',
-            'email'=>'required',
-            'phone'=>'required|numeric',
-            'event_name'=>'required|min:4',
+            'customer_name'=>'required|min:4',
+            'email'=>'required|email',
+            'phone_number'=>'required|numeric',
             'event_catalog'=>'mimes:jpg,jpeg,png',
-            'member'=>'required|min:4',
+            'member'=>'required|min:2',
             'description'=>'required|min:4',
             'address'=>'required|min:4',
             'event_category'=>'required|min:4',
@@ -36,22 +43,38 @@ class EventBookingController extends Controller
         $filename = time(). "." . $request->event_catalog->extension();
         if($validate){
             $data = [
-                'customer_name'=>$request->name,
+                'customer_name'=>$request->customer_name,
                 'email'=>$request->email,
-                'phone'=>$request->phone,
-                'event_name'=>$request->event_name,
+                'phone_number'=>$request->phone_number,
                 'event_catalog'=>$filename,
                 'member'=>$request->member,
                 'description'=>$request->description,
                 'address'=>$request->address,
+                'event_category'=>$request->event_category,
                 
             ];
-            $model = new EventBooking();
-            $request->event_catalog->move('uploads',$filename);
-            if($model->create($data));
-            // return redirect()->route('.index')->with('msg','Blog Inserted Successfully');
-
-        
+            
+            $model = new Booking();
+            if($model->create($data)){
+                $request->event_catalog->move('uploads',$filename);
+                return back()->with('msg','Blog Inserted Successfully');
+            }
+        }
     }
+    public function status(Request $request,$id){
+        $booking = Booking::find($id);
+        $data = [
+            'status'=>$request->status
+        ];
+        $booking->update($data);
+        // return 'khibe baba'; }
+        return back()->with('msg','status updated');
+    }
+public function delete($id){
+    $booking = Booking::find($id);
+    if($booking->delete());
+    return back()->with('msg','Booking Delete Successfully');
 }
+
+
 }

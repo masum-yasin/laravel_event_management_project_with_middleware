@@ -44,7 +44,7 @@
                             
                             <div class="form-group mb-2">
                                 <Label>Name*</Label>
-                                <input type="text" placeholder="" name="name">
+                                <input type="text" placeholder="" name="customer_name">
                             </div>
                             <div class="form-group mb-2">
                                 <Label>Email*</Label>
@@ -52,11 +52,11 @@
                             </div>
                             <div class="form-group mb-2">
                                 <Label>Phone Number*</Label>
-                                <input type="number" placeholder="" name="phone">
+                                <input type="number" placeholder="" name="phone_number">
                             </div>
                             <div class="form-group mb-2">
                                 <Label>Event Category*</Label>
-                                <input type="text" placeholder="" name="event_name">
+                                <input type="text" placeholder="" name="event_category">
                             </div>
                             <div class="form-group mb-2">
                                 <Label>Event Catalog*</Label>
@@ -74,11 +74,10 @@
                                 <Label>Address*</Label>
                                <textarea name="address" id="" cols="15" rows="5"></textarea>
                             </div>
-                           
-                            <div class="form-btn">
-                                <button type="submit" class="nir-btn">SEND MESSAGE</button>
+                            <div class="form-group mb-2">
+                                <input type="submit" class="nir-btn" id="" value="Send Message">
                             </div>
-                        </form>
+                           </form>
                     </div>
                        
                 </div>

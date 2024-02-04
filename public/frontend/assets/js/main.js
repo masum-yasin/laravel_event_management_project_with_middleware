@@ -1,10 +1,4 @@
-/*------------------------------------------------------------------
-* Project:        Eventiz - Event Conference HTML Template
-* Author:         bizberg_themes
-* URL:            https://themeforest.net/user/bizberg_themes
-* Created:        07/13/2023
--------------------------------------------------------------------
-*/
+
 
  (function($) {
      "use strict";
@@ -123,6 +117,11 @@
 
       }
     });
+     $("#booking_store").validate({      
+      
+
+      
+    });
 
     
      /*-----------------------------------------------------------------------------------*/
@@ -161,8 +160,7 @@
      });
      //Do not include! This prevents the form from submitting for DEMO purposes only!
      $('form').submit(function(event) {
-         event.preventDefault();
-         return false;
+         return true;
      });
 
  })(jQuery);

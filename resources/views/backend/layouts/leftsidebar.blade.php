@@ -119,6 +119,16 @@
                         <li><a href="{{route('eventspeaker.index')}}">All Event Speaker</a></li>
                     </ul>
                 </li>
+                {{-- Booking Routing --}}
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon dw dw-copy"></span><span class="mtext">Event Booking</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{route('booking.index')}}">All Booking</a></li>
+                        {{-- <li><a href="{{route('eventspeaker.index')}}">All Event Speaker</a></li> --}}
+                    </ul>
+                </li>
               
                
                 

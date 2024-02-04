@@ -250,7 +250,7 @@
                             <ul class="schedule-items d-flex justify-content-lg-start justify-content-center">
                                 <li class="d-flex align-items-center me-4">
                                     <i  class="icon-location-pin theme pe-1"></i>
-                                    <button class="theme1 p-3 bg-warning text-white" style="font-size: 18px"><a href="{{route('frontend.eventbooking',$item->id)}}">Event Details</a></button>
+                                    <button class="theme1 p-2 bg-warning text-white" style="font-size: 18px"><a href="{{route('frontend.eventbooking',$item->id)}}">Booking Now</a></button>
                                 </li>
                                
                             </ul>
