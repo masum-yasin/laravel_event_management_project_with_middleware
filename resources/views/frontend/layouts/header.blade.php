@@ -26,6 +26,7 @@
                             </li>
 
                             <li><a href="{{route('about.us')}}" class="">About Us</a></li>
+                            <li><a href="{{route('userreview.create')}}" class="">Review</a></li>
 
                             <li class="submenu dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <i class="fas fa-caret-down ms-1" aria-hidden="true"></i></a> 
@@ -74,10 +75,10 @@
 
                     <div id="slicknav-mobile"></div>
                     <div>
-                        <a href="{{route('dashboard')}}" class="btn btn-warning" style="width:100px; ">super Admin</a>
+                        <a href="{{route('dashboard')}}" class="btn btn-warning" style="width:100px;">Super Admin</a>
                     </div>
                     <div>
-                        <a href="{{route('editor_login_form')}}" class="btn btn-warning p-3" style="width:100px;">Admin</a>
+                        <a href="{{route('editor_login_form')}}" class="btn btn-warning p-3" style="width:100px; margin:0 5px;">Admin</a>
                     </div>
                     <div>
                         <a href="{{route('admin_login_form')}}" class="btn btn-warning p-3" style="width:100px;">Editor</a>

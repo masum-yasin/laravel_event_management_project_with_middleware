@@ -18,8 +18,7 @@
 
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="frontend/assets/fonts/line-icons.css" type="text/css">
+    
 </head>
 
 <body>
@@ -59,7 +58,7 @@
     <script src="{{asset('frontend/assets/js/jquery-3.5.1.min.js')}}"></script>
     <script src="{{asset('frontend/assets/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('frontend/assets/js/plugin.js')}}"></script>
-    <script src="{{asset('frontend/assets/js/main.js')}}"></script>
+    {{-- <script src="{{asset('frontend/assets/js/main.js')}}"></script> --}}
     <script src="{{asset('frontend/assets/js/custom-nav.js')}}"></script>
 </body>
 

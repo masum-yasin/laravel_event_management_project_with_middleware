@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -12,7 +13,8 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        $reviews = Review::get();
+        return view('frontend.review.index',compact('reviews'));
     }
 
     /**
@@ -28,8 +30,22 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+    //   dd($request->all());
+        $data = [
+                'review_title'=>$request->review_title,
+                'descripation'=>$request->descripation,
+                'occupation'=>$request->occupation,
+                'rating'=>$request->rating,
+                
+                
+            ];
+            
+            $model = new Review();
+            if($model->create($data)){
+               return redirect()->route('userreview.index')->with('msg','Review Inserted Successfully');
+            }
+        }
+    
 
     /**
      * Display the specified resource.
@@ -60,6 +76,8 @@ class ReviewController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+     $reviews = Review::find($id);
+     if($reviews->delete());
+     return redirect()->route('userreview.index')->with('msg','Review Delete Successfully');
     }
 }
