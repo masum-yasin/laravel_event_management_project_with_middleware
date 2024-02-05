@@ -27,9 +27,7 @@ Route::get('/', function () {
     return view('/frontend.home');
 })->name('home');
 
-Route::get('/frontend/contact', function () {
-    return view('frontend.contact');
-})->name('contact.us');
+
 Route::get('/frontend/about', function () {
     return view('/frontend.about');
 })->name('about.us');
@@ -58,12 +56,13 @@ Route::get('/', [FrontendHomeController::class,'index']);
 
 // Frontend Booking//
 Route::get('frontend/booking', [EventBookingController::class,'index'])->name('booking.index');
-Route::post('booking/status/{id}', [EventBookingController::class,'status'])->name('booking.status');
-Route::get('frontend/eventbooking/{id}', [EventBookingController::class,'create'])->name('frontend.eventbooking');
+Route::get('frontend/eventbooking/{id}', [EventBookingController::class,'create'])->name('frontend.eventbooking'); // customer middleware
 Route::post('booking/store', [EventBookingController::class, 'store'])->name('booking.store');
-Route::get('booking/edit/{id}',[EventBookingController::class,'delete'])->name('booking.delete');
+// for customer booking status//
+Route::post('booking/status/{id}', [EventBookingController::class,'status'])->name('booking.status');
 
 Route::get('booking/delete/{id}',[EventBookingController::class,'delete'])->name('frontend.booking');
+
 
 
 

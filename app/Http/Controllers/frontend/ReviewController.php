@@ -43,7 +43,7 @@ class ReviewController extends Controller
             
             $model = new Review();
             if($model->create($data)){
-               return redirect()->route('userreview.index')->with('msg','Review Inserted Successfully');
+               return redirect()->route('userreview.create')->with('msg','Review Inserted Successfully');
             }
         }
     
@@ -51,7 +51,7 @@ class ReviewController extends Controller
     /**
      * Display the specified resource.
      */
-    public function status( Request $request, $id)
+    public function status(Request $request,$id)
     {
         $review = Review::find($id);
         $data =[
@@ -66,7 +66,7 @@ class ReviewController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        
     }
 
     /**

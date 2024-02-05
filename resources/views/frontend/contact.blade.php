@@ -74,7 +74,7 @@
                             
                             <div id="contactform-error-msg"></div>
 
-                            <form method="post" action="{{route('booking.store')}}" enctype="multipart/form-data">
+                            <form method="post" action="{{route('contact.store')}}">
                                 @csrf
                                 
                                 <div class="form-group mb-2">

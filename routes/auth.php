@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
@@ -10,11 +10,12 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\backend\CategoryController;
+// use App\Http\Controllers\backend\ContactController;
 use App\Http\Controllers\backend\EmplyEvantCategoryController;
 use App\Http\Controllers\backend\EmplyEvantController;
 use App\Http\Controllers\backend\EventtypeController;
 use App\Http\Controllers\backend\PostBlogController;
-// use App\Http\Controllers\backend\ContactController;
+use App\Http\Controllers\frontend\ContactController;
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\ScheduleController;
 use App\Http\Controllers\backend\SpeakerController;
@@ -107,7 +108,13 @@ Route::middleware('auth')->group(function () {
         Route::resource('eventvenues',VenueController::class);
         // event Routing//
         Route::resource('eventspeaker',SpeakerController::class);
+    // Review Routing
         Route::resource('userreview',ReviewController::class);
+        Route::post('review/status/{id}',[ReviewController::class,'status'])->name('review.status');
+
+        //Contact Routing//
+        Route::resource('contact', ContactController::class);
+
 
 });
     

@@ -45,7 +45,7 @@
 								<th scope="col">#ID</th>
 								<th scope="col">Post Name</th>
 								<th scope="col">Image</th>
-								<th scope="col">Category ID</th>
+								<th scope="col">Category Name</th>
 								<th scope="col">Location</th>
 								<th scope="col">Description</th>
 								<th scope="col">Action</th>

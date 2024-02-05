@@ -1,12 +1,10 @@
-<?php
 
-namespace App\Http\Controllers\backend;
+
+namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Contacts;
+use App\Models\Contact;
 use Illuminate\Http\Request;
-
-
 
 class ContactController extends Controller
 {
@@ -15,7 +13,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        
+        //
     }
 
     /**
@@ -23,7 +21,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return view('frontend.');
+        return view('frontend.contact');
     }
 
     /**
@@ -31,7 +29,27 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-       
+        $contact =new Contact();
+        $validata = $request->validate(
+            [
+                'name'=>'required|min:4',
+                'email'=>'required|email',
+                'phone'=>'required|min:5',
+                'subject'=>'required|min:6',
+                'address'=>'required|min:6',
+               
+            ]);
+            if($validata){
+                $data = [
+                    'name'=>$request->name,
+                    'email'=>$request->email,
+                    'phone'=>$request->phone,
+                    'subject'=>$request->subject,
+                    'address'=>$request->address,
+                ];
+                $contact->insert($data);
+                return redirect('frontend.contact')->with('msg','Contact Successfully inserted');
+            }
     }
 
     /**

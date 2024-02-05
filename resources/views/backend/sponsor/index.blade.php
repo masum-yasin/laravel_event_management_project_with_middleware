@@ -45,7 +45,7 @@
 								<th scope="col">#ID</th>
 								<th scope="col">Company Name</th>
 								<th scope="col">Logo</th>
-								<th scope="col">Category_Id</th>
+								<th scope="col">Category Name</th>
 								<th scope="col">Company Location</th>
 								<th scope="col">Description</th>
 								<th scope="col">Action</th>

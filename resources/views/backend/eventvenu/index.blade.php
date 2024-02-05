@@ -43,7 +43,7 @@
 						<thead>
 							<tr>
 								<th scope="col">#ID</th>
-								<th scope="col">Event Category</th>
+								<th scope="col">Event Category Name</th>
 								<th scope="col">Event image</th>
 								<th scope="col">Event Address</th>
 								<th scope="col">Latitude</th>

@@ -42,6 +42,7 @@
 								<th scope="col">Description</th>
 								<th scope="col">Occupation</th>
 								<th scope="col">Rating</th>
+								<th scope="col">Status</th>
 								</tr>
 						</thead>
 						<tbody>
@@ -52,13 +53,17 @@
 								<td>{{$review->descripation}}</td>
 								<td>{{$review->occupation}}</td>
 								<td>{{$review->rating}}</td>
+								<td>{{$review->status}}</td>
 							    <td class="d-flex justify-content-around">
-									<form action="">
-										<select name="status" id="">
+									
+											<form action="{{route('review.status',$review->id)}}" method="post" >
+												@csrf
+												<select name="status" id="" >
 											<option  value="" disabled selected>Select One</option>
-											<option value="0">Cancelled</option>
-											<option value="1">Confirmed</option>
-										</select>
+											<option value="0">Cancle</option>
+											<option value="1">Confirm</option>
+											</select><br>
+											<button type="submit">Change</button>
 									</form>
 							    <form action="{{route('userreview.destroy',$review->id)}}" method="post">
                                  @csrf

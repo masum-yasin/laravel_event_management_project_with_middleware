@@ -70,17 +70,22 @@
                                 <td>{{$item->address }}</td>
                                
 								
-								<td class="d-flex btn mt-5">
-									<form action="{{route('booking.status',$item->id)}}" method="post">
-										@csrf
-										<select name="status" id="">
-											<option value="" disabled selected>Select One</option>
-											<option value="0">Cancle</option>
-											<option value="1">confirm</option>
-										</select>
-										<button type="submit">Change</button>
-									</form>
-									<a href="{{route('frontend.booking',$item->id)}}" class="btn btn-sm btn-dark" style="margin-left:10px;"> Delete</a>
+								<td class="" style="display:flex; gap:10px">
+									<div>
+										<form action="{{route('booking.status',$item->id)}}" method="post">
+											@csrf
+											<select name="status" id="">
+												<option value="" disabled>Select One</option>
+												<option value="0">Cancle</option>
+												<option value="1">confirm</option>
+												<option value="2">panding</option>
+											</select>
+											<button type="submit">Change</button>
+										</form>
+									</div>
+									<div>
+										<a href="{{route('frontend.booking',$item->id)}}" class="btn btn-sm btn-dark" style="margin-left:10px;"> Delete</a>
+									</div>
 								</td>
                                 
 								</td>

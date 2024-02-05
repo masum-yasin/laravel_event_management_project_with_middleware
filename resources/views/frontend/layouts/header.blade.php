@@ -62,7 +62,7 @@
                                     <li><a href="{{route('singlepost')}}">Single Post</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{{route('contact.us')}}" class="">Contact Us</a></li>
+                            <li><a href="{{route('contact.create')}}" class="">Contact Us</a></li>
                             <li class="search-main">
                                 <a href="#search1" class="mt_search"><i class="fa fa-search fs-5"></i></a>
                             </li>
