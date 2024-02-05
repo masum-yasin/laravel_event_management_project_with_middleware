@@ -53,6 +53,13 @@
 								<td>{{$review->occupation}}</td>
 								<td>{{$review->rating}}</td>
 							    <td class="d-flex justify-content-around">
+									<form action="">
+										<select name="status" id="">
+											<option  value="" disabled selected>Select One</option>
+											<option value="0">Cancelled</option>
+											<option value="1">Confirmed</option>
+										</select>
+									</form>
 							    <form action="{{route('userreview.destroy',$review->id)}}" method="post">
                                  @csrf
                                 <input type="hidden" name="_method" value="DELETE">

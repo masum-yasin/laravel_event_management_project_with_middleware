@@ -51,9 +51,14 @@ class ReviewController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function status( Request $request, $id)
     {
-        //
+        $review = Review::find($id);
+        $data =[
+            'status'=>$request->status,
+        ];
+        $review->update($data);
+        return back()->with('msg','Status Inserted Successfully');
     }
 
     /**

@@ -78,7 +78,7 @@
                         <a href="{{route('dashboard')}}" class="btn btn-warning" style="width:100px;">Super Admin</a>
                     </div>
                     <div>
-                        <a href="{{route('editor_login_form')}}" class="btn btn-warning p-3" style="width:100px; margin:0 5px;">Admin</a>
+                        <a href="{{route('editor_login_form')}}" class="btn btn-warning p-3" style="width:100px; margin:0 3px;">Admin</a>
                     </div>
                     <div>
                         <a href="{{route('admin_login_form')}}" class="btn btn-warning p-3" style="width:100px;">Editor</a>
