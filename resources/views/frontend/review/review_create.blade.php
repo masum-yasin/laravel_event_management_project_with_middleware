@@ -31,39 +31,204 @@
                     </h2>
                 </div>
             </div>
-            <div class="contact-info">
-                
-                <div class="contact-info-content row mb-5">
-                    <div class="card-group">
-                        <div class="card">
-                          <img class="card-img-top" src="..." alt="Card image cap">
-                          <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                          </div>
+         
+    <section class="product-lists pt-12">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 pe-lg-4">
+                    <div class="listing-inner">
+                        <div class="row">
+                            @foreach ($reviews as $item)
+                            <div class="col-lg-6 col-md-6 mb-4">
+                            
+                                <div class="articles-item box-shadow bg-white overflow-hidden position-relative p-3 text-center">
+                                    <div class="articles-image">
+                                        <img src="{{asset('frontend/assets/images/review3.jpg')}}" alt="image" style="width: 400px">
+                                        <div class="articles-cats position-absolute top-0 end-0 bg-theme1 p-1 px-2 white mt-3 me-4">Star</div>
+                                    </div>
+                                    <div class="articles-content-main">
+                                        <div class="articles-content pt-4">
+                                            <h4 class="mb-1"><a href="product-detail.html">{{$item->review_title}}</a></h4>
+                                           
+                                        </div>
+        
+                                    </div>
+                                </div>
+                               
+                            </div>
+                            @endforeach
                         </div>
-                        <div class="card">
-                          <img class="card-img-top" src="..." alt="Card image cap">
-                          <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                          </div>
-                        </div>
-                        <div class="card">
-                          <img class="card-img-top" src="..." alt="Card image cap">
-                          <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                          </div>
-                        </div>
-                      </div>
+
+                       
+                    </div>
                 </div>
-                <div id="contact-form1" class="contact-form">
+
+                <div class="col-lg-8 pe-lg-4 mb-4 mt-lg-5">
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                        
+                    @endif
+                    <h2 class="text-center text-lg-start">Event Review</h2>
+                    
+                    <form method="post" action="{{route('userreview.store')}}" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group mb-2">
+                            <Label>Event Title*</Label>
+                            <input type="text" placeholder="" name="review_title">
+                        </div>
+                       
+                        <div class="form-group mb-2">
+                            <Label>consumer occupation*</Label>
+                            <input type="text" placeholder="" name="occupation">
+                        </div>
+                        <div class="form-group mb-2">
+                            <Label>Give Start Rating*</Label><br>
+                            One Star<input type="radio" value="1" name="rating" class="" id="radio" value="1" placeholder="subject"><br>
+                            Two Star<input type="radio" value="1" name="rating" class="" id="radio" value="2" placeholder="subject"><br>
+                            Three Star<input type="radio" value="3" name="rating" class="" id="radio" placeholder="subject"><br>
+                            Four Star<input type="radio" value="1" name="rating" class="" id="radio" value="4" placeholder="subject"><br>
+                            Five Star<input type="radio" name="rating" class="" id="radio" value="5" placeholder="subject"><br>
+                        </div>
+                        <div class="form-group mb-2">
+                            <Label>Review Description*</Label>
+                            <input type="text" placeholder="" name="descripation">
+                        </div>
+                      <div class="form-group mb-2">
+                            <input type="submit" class="nir-btn" id="" value="Send Message">
+                        </div>
+                       </form>
+                </div>
+
+                <!-- sidebar starts -->
+                <div class="col-lg-4 ps-lg-4">
+                    <div class="sidebar-sticky">
+                        <div class="list-sidebar">
+                            <div class="subscribe-form overflow-hidden position-relative mb-4">
+                                <form>
+                                    <input type="text" placeholder="Search your keyword here..">
+                                    <input type="submit" class="nir-btn bordernone position-absolute end-0" value="Search">
+                                </form>
+                            </div>
+                            
+                            <div class="sidebar-item mb-4 bg-grey p-4">
+                                <h5 class="bg-white p-3 mb-4">Review Gallery</h5>
+                                <div class="row gallery-main">
+    
+                                    
+                                    <div class="col-lg-6 col-md-6 mansonry-item p-2">
+                                        <div class="gallery-item">
+                                            <div class="gallery-image">
+                                                <a href="{{asset('rontend/assets/images/products/Summer Cloth.H03.2k.png')}}" data-lightbox="gallery" data-title="Title">
+                                                    <img src="{{asset('frontend/assets/images/review3.jpg')}}" alt="image">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                    <div class="col-lg-6 col-md-6 mansonry-item p-2">
+                                        <div class="gallery-item">
+                                            <div class="gallery-image">
+                                                <a href="{{asset('frontend/assets/images/products/T-Shirt.H03.2k.png')}}" data-lightbox="gallery" data-title="Title">
+                                                    <img src="{{asset('frontend/assets/images/review3.jpg')}}" alt="image">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                            </div> 
+                            </div>
+
+                            <div class="sidebar-item mb-4 bg-grey p-4">
+                                <h5 class="bg-white p-3 mb-4">Recent Review</h5>
+                                <article class="post mb-2">
+                                    <div class="s-content d-flex align-items-center justify-space-between">
+                                        <div class="sidebar-image w-25 me-3 rounded">
+                                            <a href="product-detail.html"><img src="{{asset('frontend/assets/images/review.jpg')}}" alt=""></a>
+                                        </div>
+                                        <div class="content-list w-75">
+                                            <h6 class="mb-1"><a href="product-detail.html">The E-Evaluation</a></h6>
+                                            <div class="date small">10 Apr 2024</div>
+                                        </div>    
+                                    </div> 
+                                </article>
+                          
+
+                                <article class="post mb-2">
+                                    <div class="s-content d-flex align-items-center justify-space-between">
+                                        <div class="sidebar-image w-25 me-3 rounded">
+                                            <a href="product-detail.html"><img src="{{asset('frontend/assets/images/review2.jpg')}}" alt=""></a>
+                                        </div>
+                                        <div class="content-list w-75">
+                                            <h6 class="mb-1"><a href="product-detail.html">Rating Review</a></h6>
+                                            <div class="date small">10 Apr 2024</div>
+                                        </div>    
+                                    </div> 
+                                </article>
+                                <article class="post mb-2">
+                                    <div class="s-content d-flex align-items-center justify-space-between">
+                                        <div class="sidebar-image w-25 me-3 rounded">
+                                            <a href="product-detail.html"><img src="{{asset('frontend/assets/images/review.jpg')}}" alt=""></a>
+                                        </div>
+                                        <div class="content-list w-75">
+                                            <h6 class="mb-1"><a href="product-detail.html">Star Spotters</a></h6>
+                                            <div class="date small">10 Apr 2024</div>
+                                        </div>    
+                                    </div> 
+                                </article>
+
+                                <article class="post">
+                                    <div class="s-content d-flex align-items-center justify-space-between">
+                                        <div class="sidebar-image w-25 me-3 rounded">
+                                            <a href="product-detail.html"><img src="{{asset('frontend/assets/images/review3.jpg')}}" alt=""></a>
+                                        </div>
+                                        <div class="content-list w-75">
+                                            <h6 class="mb-1"><a href="product-detail.html">Grade Gurus</a></h6>
+                                            <div class="date small">10 Apr 2024</div>
+                                        </div>    
+                                    </div> 
+                                </article>
+                            </div>
+
+                        
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+              
+            {{-- <div class="contact-info-content row mb-5">
+                <div class="card-group">
+                    <div class="card">
+                      <img class="card-img-top" src="{{asset('frontend/assets/images/review3.jpg')}}" alt="Card image cap" style="width: 300px">
+                      <div class="card-body">
+                        <h5 class="card-title">{{$item->review_title}}</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                   
+                  </div>
+            </div> --}}
+         
+            
+            <div class="contact-info">
+             
+              
                     <div class="row">
-                        <div class="col-lg-8 pe-lg-4 mb-4">
+                            
+                </div>
+
+
+
+                 {{-- <div class="col-lg-8 pe-lg-4 mb-4">
                             
                             <div id="contactform-error-msg"></div>
 
@@ -91,7 +256,7 @@
                                     <input type="submit" class="nir-btn" id="submit2" value="Send Message">
                                 </div>
                             </form>
-                        </div>
+                        </div> --}}
                         <div class="col-lg-4 ps-lg-4 mb-4">
                             <div class="map">
                                 <div style="width: 100%">

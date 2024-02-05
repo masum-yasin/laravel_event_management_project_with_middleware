@@ -68,33 +68,42 @@
                         </div>
                     </div>
                 </div>
-                <div id="contact-form1" class="contact-form">
-                    <div class="row">
+                <div class="row"">
+               
                         <div class="col-lg-8 pe-lg-4 mb-4">
                             
                             <div id="contactform-error-msg"></div>
 
-                            <form method="post" action="#" name="contactform2" id="contactform2">
+                            <form method="post" action="{{route('booking.store')}}" enctype="multipart/form-data">
+                                @csrf
+                                
                                 <div class="form-group mb-2">
-                                    <input type="text" name="first_name" class="form-control" id="fullname" placeholder="First Name">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="email" name="email"  class="form-control" id="email" placeholder="Email">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <input type="text" name="phone" class="form-control" id="phnumber" placeholder="Phone">
+                                    <Label>Name*</Label>
+                                    <input type="text" placeholder="" name="name">
                                 </div>
                                 <div class="form-group mb-2">
-                                    <input type="text" name="subject" class="form-control" id="llastname" placeholder="subject">
+                                    <Label>Email*</Label>
+                                    <input type="email" placeholder="" name="email">
                                 </div>
-                                <div class="textarea mb-2">
-                                    <textarea name="comments" placeholder="Enter a message"></textarea>
+                                <div class="form-group mb-2">
+                                    <Label>Phone Number*</Label>
+                                    <input type="number" placeholder="" name="phone">
                                 </div>
-                                <div class="comment-btn text-center text-lg-start">
-                                    <input type="submit" class="nir-btn" id="submit2" value="Send Message">
+                                <div class="form-group mb-2">
+                                    <Label>Subject*</Label>
+                                    <input type="text" placeholder="" name="subject">
                                 </div>
-                            </form>
+                               
+                                <div class="form-group mb-2">
+                                    <Label>Address*</Label>
+                                   <textarea name="address" id="" cols="15" rows="5"></textarea>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <input type="submit" class="nir-btn" id="" value="Send Message">
+                                </div>
+                               </form>
                         </div>
+                   
                         <div class="col-lg-4 ps-lg-4 mb-4">
                             <div class="map">
                                 <div style="width: 100%">

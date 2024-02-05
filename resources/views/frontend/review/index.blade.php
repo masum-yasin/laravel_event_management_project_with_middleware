@@ -8,10 +8,9 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>All Employee List</h4>
+								<h4>All Review List</h4>
 							</div>
-							
-						</div>
+							</div>
 						<div class="col-md-6 col-sm-12 text-right">
 							<div class="dropdown">
 								<a class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
@@ -26,8 +25,6 @@
 						</div>
 					</div>
 				</div>
-			
-			
 				<!-- Striped table start -->
                 @if (session('msg'))
                     <div class="div-alert-success">
@@ -36,34 +33,27 @@
                 @endif
 				<div class="pd-20 card-box mb-30">
 					<div class="clearfix mb-20">
-						
-						
 					</div>
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th scope="col">#ID</th>
+							<th scope="col">#ID</th>
 								<th scope="col">Review Title</th>
 								<th scope="col">Description</th>
 								<th scope="col">Occupation</th>
 								<th scope="col">Rating</th>
-								
-							</tr>
+								</tr>
 						</thead>
 						<tbody>
 							@foreach ($reviews as $key=>$review)
-								
-							
-							<tr>
+								<tr>
 								<th scope="row">{{++$key}}</th>
-							    <td>{{$review->review_name}}</td>
+							    <td>{{$review->review_title}}</td>
 								<td>{{$review->descripation}}</td>
 								<td>{{$review->occupation}}</td>
 								<td>{{$review->rating}}</td>
-							    
-								<td class="d-flex justify-content-around">
-							    
-                                <form action="{{route('userreview.destroy',$review->id)}}" method="post">
+							    <td class="d-flex justify-content-around">
+							    <form action="{{route('userreview.destroy',$review->id)}}" method="post">
                                  @csrf
                                 <input type="hidden" name="_method" value="DELETE">
                                 <button type="submit" class="btn btn-sm btn-danger">Delete</button>
@@ -71,8 +61,7 @@
 								</td>
 							</tr>
 							@endforeach
-							
-						</tbody>
+							</tbody>
 					</table>
 					
 				</div>

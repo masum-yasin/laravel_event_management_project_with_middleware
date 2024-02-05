@@ -22,7 +22,8 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        return view('frontend.review.review_create');
+        $reviews = Review::get();
+        return view('frontend.review.review_create',compact('reviews'));
     }
 
     /**
