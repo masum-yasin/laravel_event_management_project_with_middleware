@@ -1,4 +1,4 @@
-
+<?php
 
 namespace App\Http\Controllers\frontend;
 
@@ -13,7 +13,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $contact = Contact::get();
+        return view('frontend.contact.index',compact('contact'));
     }
 
     /**
@@ -21,7 +22,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        return view('frontend.contact');
+        return view('frontend.contact.contact');
     }
 
     /**
@@ -81,6 +82,8 @@ class ContactController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $contact = Contact::find($id);
+        if($contact->delete());
+        return redirect()->route('contact.index')->with('msg','User Contact Delete Successfully');
     }
 }
