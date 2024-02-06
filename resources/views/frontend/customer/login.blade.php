@@ -56,7 +56,7 @@
 						<div class="login-title">
 							<h2 class="text-center text-primary">Login To DeskApp</h2>
 						</div>
-						<form method="post" action="">
+						<form method="post" action="{{route('customerLogin')}}">
 							@csrf
 							<div class="select-role">
 								<div class="btn-group btn-group-toggle" data-toggle="buttons">

@@ -50,7 +50,7 @@ Route::middleware('guest')->group(function () {
                 ->name('password.store');
 });
 
-Route::middleware('auth')->group(function () {
+// Route::middleware('auth')->group(function () {
     Route::get('verify-email', EmailVerificationPromptController::class)
                 ->name('verification.notice');
 
@@ -90,11 +90,12 @@ Route::middleware('auth')->group(function () {
                 Route::get('category/delete/{id}',[CategoryController::class,'destroy'])->name('category.delete');
                // contact section start//
 
+    Route::get('customer/create', [CustomerController::class,'create'])->name('customer_login_form');
 
-
-     Route::get('customer/create', [CustomerController::class,'create'])->name('customer_login_form');
+     Route::post('customer/login', [CustomerController::class,'login'])->name('customerLogin');
      Route::post('customer/logout', [CustomerController::class, 'destroy'])->name('customer.logout');
      Route::get('customer/dashboard', [CustomerController::class, 'dashboard'])->name('customer.dashboard')->middleware('customer');
+     Route::get('customer/mybooking', [CustomerController::class, 'mybooking'])->name('customer.mybooking');
     // Here are resource Routing Start//
 
     // Employee Evant Categories Route resource 
@@ -120,5 +121,5 @@ Route::middleware('auth')->group(function () {
         Route::resource('contact', ContactController::class);
 
 
-});
+// });
     

@@ -52,7 +52,7 @@ class EventBookingController extends Controller
                 'address'=>$request->address,
                 'event_category'=>$request->event_category,
                 'customer_id' => $request->customer_id ,
-                'evettype_id' => $request->evettype_id ,
+                'eventtype_id' => $request->eventtype_id ,
                 
             ];
             

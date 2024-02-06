@@ -20,8 +20,8 @@ class CustomerController extends Controller
    public function login(Request $request){
       $customer = $request->all();
      
-      if(Auth::guard('admin')->attempt(['email'=>$customer['email'], 'password'=>$customer['password']])){
-          return redirect()->route('/');
+      if(Auth::guard('customer')->attempt(['email'=>$customer['email'], 'password'=>$customer['password']])){
+          return redirect('/');
       }
       else{
           return view('frontend.customer.login');
@@ -32,14 +32,14 @@ class CustomerController extends Controller
       return view('frontend.customer.dashboard');
   }
 
-  public function customerDetail()
+  public function mybooking()
   {
       $customer_id = Auth::guard('customer')->user()->id;
       // $product = Order::where('student_id', $student_id)->get();
       $booking = Booking::where('customer_id', $customer_id)
-      ->where('status', 1)
+      ->where('status', 0)
       ->get();
-      return view('frontend.mycourses', compact('booking'));
+      return view('frontend.customer.mybooking', compact('booking'));
   }
 
 
