@@ -52,6 +52,10 @@ return [
             'driver' => 'session',
             'provider' => 'volunteers',
         ],
+        'customer' => [
+            'driver' => 'session',
+            'provider' => 'volunteers',
+        ],
     ],
 
     /*
@@ -87,6 +91,10 @@ return [
         'volunteers' => [
             'driver' => 'eloquent',
             'model' => App\Models\Volunteer::class,
+        ],
+        'volunteers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Customer::class,
         ],
 
         // 'users' => [
@@ -134,6 +142,12 @@ return [
             'throttle' => 60,
         ],
         'volunteers' => [
+            'provider' => 'users',
+            'table' => 'password_reset_tokens',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'customers' => [
             'provider' => 'users',
             'table' => 'password_reset_tokens',
             'expire' => 60,

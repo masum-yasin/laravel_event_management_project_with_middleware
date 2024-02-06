@@ -21,6 +21,7 @@ use App\Http\Controllers\backend\ScheduleController;
 use App\Http\Controllers\backend\SpeakerController;
 use App\Http\Controllers\backend\SponsorController;
 use App\Http\Controllers\backend\VenueController;
+use App\Http\Controllers\frontend\CustomerController;
 use App\Http\Controllers\frontend\ReviewController;
 use Illuminate\Support\Facades\Route;
 
@@ -88,9 +89,12 @@ Route::middleware('auth')->group(function () {
                 Route::post('category/update/{id}',[CategoryController::class,'update'])->name('category.update');
                 Route::get('category/delete/{id}',[CategoryController::class,'destroy'])->name('category.delete');
                // contact section start//
-    //  Route::get('contact/create', [ContactController::class,'create'])->name('contact.create');
-    //  Route::post('contact/store',[ContactController::class,'store'])->name('contact.store');
 
+
+
+     Route::get('customer/create', [CustomerController::class,'create'])->name('customer_login_form');
+     Route::post('customer/logout', [CustomerController::class, 'destroy'])->name('customer.logout');
+     Route::get('customer/dashboard', [CustomerController::class, 'dashboard'])->name('customer.dashboard')->middleware('customer');
     // Here are resource Routing Start//
 
     // Employee Evant Categories Route resource 

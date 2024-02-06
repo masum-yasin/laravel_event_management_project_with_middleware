@@ -44,7 +44,7 @@
                             
                             <div class="form-group mb-2">
                                 <Label>Name*</Label>
-                                <input type="text" placeholder="" name="customer_name">
+                                <input type="text" placeholder="" name="customer_name" value="{{ Auth::guard('customer')->user()->name }}">
                             </div>
                             <div class="form-group mb-2">
                                 <Label>Email*</Label>
@@ -66,6 +66,14 @@
                                 <Label>Number of Person*</Label>
                                 <input type="text" placeholder="" name="member">
                             </div>
+                            {{-- get customer id --}}
+                            <input type="hidden" name="customer_id"
+                            value="{{ Auth::guard('customer')->user()->id }}">
+
+                        {{-- get Eventtype id --}}
+                        <input type="hidden" name="eventtype_id"
+                            value="{{ $eventtypes['id'] }}">
+
                             <div class="form-group mb-2">
                                 <Label>Description*</Label>
                                <textarea name="description" id="" cols="15" rows="5"></textarea>

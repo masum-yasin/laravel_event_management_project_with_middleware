@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('member');
             $table->string('event_category',100);
             $table->text('address',200);
+            $table->tinyInteger('eventtype_id')->nullable();
+            $table->tinyInteger('customer_id')->nullable();
             $table->boolean('status')->default(0);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
