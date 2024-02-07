@@ -88,15 +88,23 @@ Route::middleware('guest')->group(function () {
                 Route::get('category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
                 Route::post('category/update/{id}',[CategoryController::class,'update'])->name('category.update');
                 Route::get('category/delete/{id}',[CategoryController::class,'destroy'])->name('category.delete');
-               // contact section start//
+
+
+
+               // customer Route section start//
 
     Route::get('customer/create', [CustomerController::class,'create'])->name('customer_login_form');
+    Route::get('customer/register', [CustomerController::class,'register'])->name('customer.register');
+    Route::post('customer/registerStore', [CustomerController::class,'registerStore'])->name('customer.registerStore');
 
      Route::post('customer/login', [CustomerController::class,'login'])->name('customerLogin');
-     Route::post('customer/logout', [CustomerController::class, 'destroy'])->name('customer.logout');
+     Route::post('customer/logout', [CustomerController::class, 'logout'])->name('customer.logout');
      Route::get('customer/dashboard', [CustomerController::class, 'dashboard'])->name('customer.dashboard')->middleware('customer');
      Route::get('customer/mybooking', [CustomerController::class, 'mybooking'])->name('customer.mybooking');
     // Here are resource Routing Start//
+
+
+
 
     // Employee Evant Categories Route resource 
     Route::resource('employeelist',EmplyEvantController::class);

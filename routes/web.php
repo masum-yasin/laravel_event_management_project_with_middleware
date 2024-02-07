@@ -31,12 +31,12 @@ Route::get('/', function () {
 Route::get('/frontend/about', function () {
     return view('/frontend.about');
 })->name('about.us');
-Route::get('/frontend/productlist', function () {
-    return view('frontend.productlist');
-})->name('productlist');
-Route::get('/frontend/productdetail', function () {
-    return view('frontend.productdetail');
-})->name('productdetail');
+// Route::get('/frontend/productlist', function () {
+//     return view('frontend.productlist');
+// })->name('productlist');
+// Route::get('/frontend/productdetail', function () {
+//     return view('frontend.productdetail');
+// })->name('productdetail');
 Route::get('/frontend/allpost', function () {
     return view('frontend.allpost');
 })->name('allpost');
@@ -56,7 +56,7 @@ Route::get('/', [FrontendHomeController::class,'index']);
 
 // Frontend Booking//
 Route::get('frontend/booking', [EventBookingController::class,'index'])->name('booking.index');
-Route::get('frontend/eventbooking/{id}', [EventBookingController::class,'create'])->name('frontend.eventbooking'); // customer middleware
+Route::get('frontend/eventbooking/{id}', [EventBookingController::class,'create'])->name('frontend.eventbooking')->middleware('customer'); // customer middleware
 Route::post('booking/store', [EventBookingController::class, 'store'])->name('booking.store');
 // for customer booking status//
 Route::post('booking/status/{id}', [EventBookingController::class,'status'])->name('booking.status');

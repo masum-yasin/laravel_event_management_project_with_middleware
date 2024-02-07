@@ -45,16 +45,15 @@
                                     <li><a href="404.html">404 Error</a></li>
                                 </ul> 
                             </li>
-                            <li class="submenu dropdown">
+                            {{-- <li class="submenu dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop <i class="fas fa-caret-down ms-1" aria-hidden="true"></i></a> 
                                 <ul class="dropdown-menu">
                                     <li><a href="{{route('productlist')}}">Product Lists</a></li>
                                     <li><a href="{{route('productdetail')}}">Product Detail</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="myaccount.html">My Account</a></li>
                                 </ul>
                             </li>
+                            --}}
+                           
                             <li class="submenu dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News <i class="fas fa-caret-down ms-1" aria-hidden="true"></i></a> 
                                 <ul class="dropdown-menu">
@@ -62,10 +61,39 @@
                                     <li><a href="{{route('singlepost')}}">Single Post</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{{route('contact.create')}}" class="">Contact Us</a></li>
-                            <li class="search-main">
-                                <a href="#search1" class="mt_search"><i class="fa fa-search fs-5"></i></a>
+                            
+                            <li><a href="{{route('contact.create')}}" class="">Contact</a></li>
+                            <li class="submenu dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin dashboard<i class="fas fa-caret-down ms-1" aria-hidden="true"></i></a> 
+                                <ul class="dropdown-menu">
+                                     <li>
+                                    <a href="{{route('dashboard')}}" class="btn" style="width:100px;">Super Admin</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('editor_login_form')}}" class="btn" style="width:100px; margin:0 3px;">Admin</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('admin_login_form')}}" class="btn btn-warning " style="width:100px;">Editor</a>
+                                </li>
+                                </ul>
                             </li>
+
+                            @if(Auth::guard('customer')->check())
+                            <li><a href="{{route('customer.mybooking')}}">My Booking</a></li>
+                        @endif
+                         
+                            <li>
+                                @if(Auth::guard('customer')->check())
+
+                        <form method="POST" action="{{route('customer.logout')}}">
+                            @csrf
+                            <button type="submit" class="btn btn-warning"> Logout </button>
+                            </form>
+
+                                @else <a href="{{route('customer_login_form')}}"> Login </a>
+                            @endif
+                        </li>
+                 
                         </ul>
                     </div><!-- /.navbar-collapse -->  
                    {{-- <div class="register-login">
@@ -74,7 +102,7 @@
                    
 
                     <div id="slicknav-mobile"></div>
-                    <div>
+                    {{-- <div>
                         <a href="{{route('dashboard')}}" class="btn btn-warning" style="width:100px;">Super Admin</a>
                     </div>
                     <div>
@@ -82,7 +110,11 @@
                     </div>
                     <div>
                         <a href="{{route('admin_login_form')}}" class="btn btn-warning p-3" style="width:100px;">Editor</a>
-                    </div>
+                    </div> --}}
+
+
+
+                                    
                 </div>
             </div><!-- /.container-fluid -->
         </nav>

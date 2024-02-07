@@ -22,9 +22,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-2">
                           <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        
-                     
-                        </ol>
+                         </ol>
                       </nav>
                       <div class="single-add-review mb-4 text-center text-lg-start">
                         @if ($errors->any())
