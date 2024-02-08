@@ -61,7 +61,8 @@ class EmplyEvantController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $employee =DB::table('evtemplys')->find($id);
+        return view('backend.employeelist.view',compact('employee'));
     }
 
     /**

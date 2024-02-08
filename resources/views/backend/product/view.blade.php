@@ -8,14 +8,14 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>All Employee List</h4>
+								<h4>Event Product List</h4>
 							</div>
 							
 						</div>
 						<div class="col-md-6 col-sm-12 text-right">
 							<div class="dropdown">
 								<a class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-									January 2018
+									Feb 2024
 								</a>
 								<div class="dropdown-menu dropdown-menu-right">
 									<a class="dropdown-item" href="#">Export List</a>
@@ -26,25 +26,16 @@
 						</div>
 					</div>
 				</div>
-			
-			
-				
+                <ul class="card-body">
+                    <li class="list-item">Product Name:{{$products->name}}</li>
+                    <li class="list-item">Description:{{$products->description}}</li>
+                  
+                    </ul>
+		    <!-- Striped table start -->
 				<div class="pd-20 card-box mb-30">
 					<div class="clearfix mb-20">
-					    <ul class="card-body text-center">
-                            <li class="list-item">Employee Name:{{$employee->emply_name}}</li>
-                            <li class="list-item">Phone Number:{{$employee->phone}}</li>
-                            <li class="list-item">Email:{{$employee->email}}</li>
-                            <li class="list-item">working location:{{$employee->working_location}}</li>
-                            <li class="list-item">joining date:{{$employee->joining_date}}</li>
-                            <li class="list-item">Regained date:{{$employee->regained_date}}</li>
-                          
-                          
-                            </ul>
-					</div>
-					
-					
-				</div>
+						</div>
+                    </div>
 			</div>
 		
 		</div>

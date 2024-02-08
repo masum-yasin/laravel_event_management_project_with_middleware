@@ -47,9 +47,11 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $id)
     {
-        //
+        // $category = Category::get();
+        $products  = product::find($id);
+        return view('backend.product.view',compact('products'));
     }
 
     /**

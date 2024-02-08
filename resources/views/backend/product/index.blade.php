@@ -8,7 +8,7 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>Categories List</h4>
+								<h4>Event Product List</h4>
 							</div>
 							
 						</div>
@@ -53,11 +53,14 @@
 								<th scope="row">{{$product['id']}}</th>
 								<td>{{$product['name']}}</td>
 								<td>{{$product['description']}}</td>
-								{{-- <td>{{$product['price']}}</td> --}}
+								
 								<td>{{$product->category->name}}</td>
-								<td>
+								<td class="d-flex gap-2">
 									<a href="product/delete/{{$product['id']}}"><i class="btn btn-danger">Delete</i></a>
-									<a href="product/edit/{{$product['id']}}"><i class="btn btn-warning">Edit</i></a>
+
+									<a href="product/edit/{{$product['id']}}"><i class="btn btn-success">Edit</i></a>
+									
+									<a href="product/show/{{$product['id']}}"><i class="btn btn-success">View</i></a>
 								</td>
 							</tr>
 							@endforeach

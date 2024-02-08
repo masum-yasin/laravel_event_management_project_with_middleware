@@ -73,6 +73,7 @@
                                 <input type="hidden" name="_method" value="DELETE">
                                 <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                 </form>
+								<a href="{{route('employeelist.show',$employee->id)}}" class="btn btn-sm btn-success">View</a>
 								</td>
 							</tr>
 							@endforeach
