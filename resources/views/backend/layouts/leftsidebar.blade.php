@@ -36,8 +36,19 @@
                         <span class="micon dw dw-copy"></span><span class="mtext">Products Type of Event</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="{{route('product.index')}}">All Event</a></li>
-                        <li><a href="{{route('product.create')}}">New Event</a></li>
+                        <li><a href="{{route('product.index')}}">All Event Product</a></li>
+                        <li><a href="{{route('product.create')}}">New Event Product</a></li>
+                        
+                       
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon dw dw-copy"></span><span class="mtext">Equipment Company</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{route('company.index')}}">All Equipment Company</a></li>
+                        <li><a href="{{route('company.create')}}">Equipment Company Add</a></li>
                         
                        
                     </ul>

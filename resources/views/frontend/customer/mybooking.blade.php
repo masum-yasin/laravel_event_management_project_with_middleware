@@ -33,43 +33,76 @@
             </div>
     <h1> My Bookings </h1>
     <table class="table">
+        <h6>Customer Detail</h6>
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Event Name</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone Number</th>
+                    <th scope="col">Number of Member</th>
+                    <th scope="col">Address</th>
                   </tr>
                 </thead>
                 <tbody>
                     @foreach ($booking as $item)
                         
                     <tr>
-                        <th scope="row">3</th>
-                        <td>{{$item['member']}}</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
+                        <th scope="row">{{$item->id}}</th>
+                        <td>{{$item->customer_name}}</td>
+                        <td>{{$item->email}}</td>
+                        <td>{{$item->phone_number}}</td>
+                        <td>{{$item->member}}</td>
+                        <td>{{$item->address}}</td>
+                        
                     </tr>
                     @endforeach
                 </tbody>
               </table>
          
-  
-           
-         
-            
-           
-             
-              
-                    <div class="row">
+        <div class="row mt-5">
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Photography</th>
+                    <th scope="col">videography</th>
+                    <th scope="col">Dj Service</th>
+                    <th scope="col">Table And Chair</th>
+                    <th scope="col">Live Music</th>
+                    <th scope="col">Lighting</th>
+                    <th scope="col">Event Staff</th>
+                    <th scope="col">Power Supply</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Master Photography</td>
+                    <td>Video Walls or LED Screens</td>
+                    <td>Chairs Covers and Sashes</td>
+                    <td>Audio-Visual Cables and Accessories</td>
+                    <td>Buffet Tables and Stations</td>
+                    <td>Concert of Live</td>
+                    <td>Cleaning Equipment and Supplies</td>
+                    <td>Generators and Power Distribution</td>
+                  </tr>
+                 
+                 
+                </tbody>
+              </table>
+
+
+
+
+
+
+
+
                             
                 </div>
-
-
-
-              
-                       
-                    </div>
+                </div>
                 </div>
  </div>
         </div>

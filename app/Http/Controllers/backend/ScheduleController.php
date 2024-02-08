@@ -37,7 +37,7 @@ class ScheduleController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'day'=>'required|numeric',
+            'day'=>'required',
             'starttime'=>'required',
             'endtime'=>'required',
             'desc'=>'required|min:5',
