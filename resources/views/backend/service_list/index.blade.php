@@ -44,7 +44,8 @@
 							<tr>
 								<th scope="col">#ID</th>
 								<th scope="col">Event Category</th>
-								<th scope="col">Company List</th>
+								<th scope="col">Company Name</th>
+								<th scope="col">Service List</th>
 								<th scope="col">Company Logo</th>
 								<th scope="col">Address</th>
 								<th scope="col">Email</th>
@@ -59,6 +60,7 @@
 								<th scope="row">{{++$key}}</th>
 							    <td>{{$servicelist->category->name}}</td>
 							    <td>{{$servicelist->equipmentcompany->company_name}}</td>
+							    <td>{{$servicelist->equipmentcompany->service_list}}</td>
 								<td><img src="{{asset('uploads/'.$servicelist->logo)}}" alt="Image" width="50px" height="50px"></td>
 								<td>{{$servicelist->address}}</td>
 								<td>{{$servicelist->email}}</td>
