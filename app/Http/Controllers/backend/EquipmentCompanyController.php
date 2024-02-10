@@ -22,6 +22,7 @@ class EquipmentCompanyController extends Controller
      */
     public function create()
     {
+      
         return view('backend.equipment_company.create');
     }
 
@@ -32,25 +33,20 @@ class EquipmentCompanyController extends Controller
     {
         $validate = $request->validate([
             'company'=>'required|min:4',
-            'logo'=>'mimes:jpg,jpeg,png',
-            'desc'=>'required|min:6|max:400',
-            'address'=>'required|min:4|max:500',
+            'service_list'=>'required|min:4|max:500',
             
 
         ]);
-        $filename = time(). "." . $request->logo->extension();
+      
         if($validate){
            $data= [
             'company_name'=>$request->company,
-            'logo'=>$filename,
-            'descripation'=>$request->desc,
-            'email'=>$request->email,
-            'address'=>$request->address,
+            'service_list'=>$request->service_list,
+            
             
            ];
            $model = new EquipmentCompany();
-           if($model->create($data));
-           $request->logo->move('uploads/', $filename);
+           if($model->insert($data));
            return redirect()->route('company.index')->with('msg','Equipment Company  Inserted Successfully');
     }
 }
@@ -60,7 +56,8 @@ class EquipmentCompanyController extends Controller
      */
     public function show(string $id)
     {
-        return view('backend.equipment_company.view');
+        $equipments = EquipmentCompany::find($id);
+        return view('backend.equipment_company.view',compact('equipments'));
     }
 
     /**
@@ -81,26 +78,19 @@ class EquipmentCompanyController extends Controller
         $equipment = EquipmentCompany::find($id);
         $validate = $request->validate([
             'company'=>'required|min:4',
-            'logo'=>'mimes:jpg,jpeg,png',
-            'desc'=>'required|min:6|max:400',
-            'address'=>'required|min:4|max:500',
-            
+            'service_list'=>'required|min:4|max:500',
+            ]);
 
-        ]);
-        $filename = time(). "." . $request->logo->extension();
         if($validate){
            $data= [
             'company_name'=>$request->company,
-            'logo'=>$filename,
-            'descripation'=>$request->desc,
-            'email'=>$request->email,
-            'address'=>$request->address,
+            'service_list'=>$request->service_list,
+            
             
            ];
        
           if($equipment->update($data))
-           $request->logo->move('uploads/', $filename);
-           return redirect()->route('company.index')->with('msg','Equipment Company  Update Successfully');
+            return redirect()->route('company.index')->with('msg','Equipment Company  Update Successfully');
     }
     }
 
@@ -112,7 +102,5 @@ class EquipmentCompanyController extends Controller
         $equipment = EquipmentCompany::find($id);
         if($equipment->delete());
         return redirect()->route('company.index')->with('msg','Equipment company Delete Successfully');
-
-        
     }
 }

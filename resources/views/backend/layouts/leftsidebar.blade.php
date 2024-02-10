@@ -53,6 +53,17 @@
                        
                     </ul>
                 </li>
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle">
+                        <span class="micon dw dw-copy"></span><span class="mtext">Equipment Service</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{route('servicelist.index')}}">All Equipment Servicelist</a></li>
+                        <li><a href="{{route('servicelist.create')}}">Add Service List</a></li>
+                        
+                       
+                    </ul>
+                </li>
               
              
                 <li class="dropdown">

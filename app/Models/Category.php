@@ -37,4 +37,8 @@ class Category extends Model
     {
         return $this->hasMany(EventSpeaker::class);
     }
+    public function servicelist(): HasMany
+    {
+        return $this->hasMany(EquipmentService::class);
+    }
 }

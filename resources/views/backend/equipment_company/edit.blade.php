@@ -7,7 +7,7 @@
 				<!-- Default Basic Forms Start -->
 				<div class="pd-20 card-box mb-30">
 					<div class="clearfix">
-                        <a href="{{route('blogpost.index')}}" class="btn btn-sm btn-success mb-3" style="float: right">Equipment company List</a>
+                        <a href="{{route('company.index')}}" class="btn btn-sm btn-success mb-3" style="float: right">Equipment company List</a>
 						<div class="pull-left">
 							<h4 class="text-blue h4">NEW Event Equipment From</h4>
 					</div>
@@ -37,34 +37,12 @@
 							</div>
 						</div>
                         <div class="form-group row">
-                            <label class="col-sm-12 col-md-2 col-form-label">Company Logo</label>
+                            <label class="col-sm-12 col-md-2 col-form-label">Company Service List</label>
                                 <div class="col-sm-12 col-md-10">
-                                    <input class="form-control" type="file" placeholder="Enter Company Logo" name="logo">
+                                    <input class="form-control" type="text" placeholder="Service Company List" name="service_list" value="{{old('service_list',$equipments->service_list)}}">
                                 </div>
-                                <div>
-                                    <img src="{{asset('uploads',$equipments->logo)}}" alt="" width="50px" height="50px">
                                 </div>
-                            </div>
-							<div class="form-group row">
-								<label class="col-sm-12 col-md-2 col-form-label">Company Email</label>
-									<div class="col-sm-12 col-md-10">
-										<input class="form-control" type="email" placeholder="Enter Email" name="email" value="{{old('email',$equipments->email)}}"> 
-									</div>
-								</div>
-                          
-                           <div class="row mb-3">
-							<label class="col-sm-12 col-md-2 col-form-label">Description</label>
-							<div class="col-sm-12 col-md-10">
-								<textarea name="desc" id="" cols="90" rows="5" class="form-control">{{old('desc',$equipments->descripation)}}</textarea>
-							</div>
-						</div>
-                        <div class="form-group row">
-                            <label class="col-sm-12 col-md-2 col-form-label">Company Address</label>
-                                <div class="col-sm-12 col-md-10">
-                                    <input class="form-control" type="text" placeholder="Enter Company Location" name="address" value="{{old('address',$equipments->address)}}">
-                                </div>
-                            </div>
-						<div class="row mb-3 w-50">
+							<div class="row mb-3 w-50">
 							<label class="col-sm-12 col-md-2 col-form-label"></label>
 							<div class="col-sm-12 col-md-10">
 								<button type="submit" class="form-control" style="margin-left:90px">Submit</button>

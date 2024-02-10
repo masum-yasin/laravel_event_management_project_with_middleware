@@ -14,6 +14,7 @@ use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\EmplyEvantCategoryController;
 use App\Http\Controllers\backend\EmplyEvantController;
 use App\Http\Controllers\backend\EquipmentCompanyController;
+use App\Http\Controllers\backend\EquipmentServiceController;
 use App\Http\Controllers\backend\EventtypeController;
 use App\Http\Controllers\backend\PostBlogController;
 use App\Http\Controllers\frontend\ContactController;
@@ -130,6 +131,7 @@ Route::middleware('guest')->group(function () {
         //Contact Routing//
         Route::resource('contact', ContactController::class);
         Route::resource('company',EquipmentCompanyController::class);
+        Route::resource('servicelist',EquipmentServiceController::class);
 
 
 // });

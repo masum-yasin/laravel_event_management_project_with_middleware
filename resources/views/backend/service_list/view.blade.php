@@ -36,8 +36,12 @@
                 @endif
 				<div class="card-box mb-30 text-center">
 					<ul class="card-body">
-                        <li class="list-item">Company Name:{{$equipments->company_name}}</li>
-                        <li class="list-item">Company Service List:{{$equipments->service_list}}</li>
+                        <li class="list-item">Company Email:{{$servicelists->email}}</li>
+                        <li class="list-item">Company Address:{{$servicelists->address}}</li>
+                        {{-- <li class="list-item">Company Service List:{{$servelist->service_list}}</li>
+                        <li class="list-item">Company Service List:{{$servelist->service_list}}</li>
+                        <li class="list-item">Company Service List:{{$servelist->service_list}}</li>
+                        <li class="list-item">Company Service List:{{$servelist->service_list}}</li> --}}
                        
                     </ul>
 					</div>
