@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\backend\PdfController;
 use App\Http\Controllers\EditorController;
 
 
@@ -99,6 +100,10 @@ Route::get('admin/dashboard/{type}',[AdminController::class,'adashboard'])->name
 Route::get('volunteer/login',[VolunteerController::class,'login'])->name('volunteer_login_form');
 Route::post('volunteer/store',[VolunteerController::class,'store'])->name('volunteerLogin');
 Route::get('volunteer/voldashboard/{type}',[VolunteerController::class,'voldashboard'])->name('volunteer.voldashboard')->middleware('volunteer');
+
+Route::get('invoice',[PdfController::class,'generate_pdf']);
+Route::get('invoice/{id}',[PdfController::class,'generate_pdf'])->name('invoiceperid');
+// Route::get('download-pdf',[PdfController::class,'download_pdf']);
 
 
 require __DIR__.'/auth.php';

@@ -18,7 +18,7 @@
 								<a class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 									January 2024
 								</a>
-								<div class="dropdown-menu dropdown-menu-right">
+								<div class="dropdown-menu dropdown-menu-right"> 
 									<a class="dropdown-item" href="#">Export List</a>
 									<a class="dropdown-item" href="#">Policies</a>
 									<a class="dropdown-item" href="#">View Assets</a>
@@ -85,6 +85,7 @@
 									</div>
 									<div>
 										<a href="{{route('frontend.booking',$item->id)}}" class="btn btn-sm btn-dark" style="margin-left:10px;"> Delete</a>
+										<a href="{{route('invoiceperid',$item->id)}}" target="_blank" class="btn btn-sm btn-dark" style="margin-left:10px;"> Invoice</a>
 									</div>
 								</td>
                                 
