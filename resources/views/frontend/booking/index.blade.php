@@ -46,9 +46,12 @@
 								<th scope="col">Customer Name</th>
 								<th scope="col">Email</th>
 								<th scope="col">Phone</th>
-								<th scope="col">Event Catalog</th>
+								{{-- <th scope="col">Event Catalog</th> --}}
 								<th scope="col">Event Category</th>
 								<th scope="col">Description</th>
+								<th scope="col">Price</th>
+								<th scope="col">payment Method</th>
+								<th scope="col">Transcation ID</th>
 								<th scope="col">Status</th>
 								<th scope="col">Member</th>
 								<th scope="col">Address</th>
@@ -62,9 +65,13 @@
 								<td>{{$item->customer_name}}</td>
 								<td>{{$item->email}}</td>
 								<td>{{$item->phone_number}}</td>
-								<td><img src="{{asset('uploads/'.$item->event_catalog)}}" alt="Image" width="50px" height="50px"></td>
+								{{-- <td><img src="{{asset('uploads/'.$item->event_catalog)}}" alt="Image" width="50px" height="50px"></td> --}}
 								<td>{{$item->event_category}}</td>
 								<td>{{$item->description }}</td>
+								<td>{{$item->booking_price }}</td>
+								<td>{{$item->payment_method }}</td>
+								<td>{{$item->t_id }}</td>
+							
 							    <td>{{$item->status}}</td>
 								<td>{{$item->member }}</td>
                                 <td>{{$item->address }}</td>

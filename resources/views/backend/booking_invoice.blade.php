@@ -67,6 +67,9 @@
                         <li class="list">Member:{{ $booking->member }}</li>
                         <li class="list">Descripation:{{$booking->description }}</li>
                         <li class="list">Address:{{ $booking->address }}</li>
+                        <li class="list">Advance Payment:{{ $booking->booking_price }}</li>
+                        <li class="list"> Payment Method:{{ $booking->payment_method }}</li>
+                        <li class="list">Transction ID:{{ $booking->t_id }}</li>
                     </ul>                   
                 </div>
                 @endforeach

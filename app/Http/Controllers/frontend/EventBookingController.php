@@ -46,19 +46,21 @@ class EventBookingController extends Controller
                 'customer_name'=>$request->customer_name,
                 'email'=>$request->email,
                 'phone_number'=>$request->phone_number,
-                'event_catalog'=>$filename,
+                // 'event_catalog'=>$filename,
                 'member'=>$request->member,
                 'description'=>$request->description,
                 'address'=>$request->address,
                 'event_category'=>$request->event_category,
                 'customer_id' => $request->customer_id ,
-                'eventtype_id' => $request->eventtype_id ,
+                'booking_price' => $request->booking_price ,
+                'payment_method' => $request->eventtype_id ,
+                't_id' => $request->eventtype_id ,
                 
             ];
-            
+            // dd($data) ;
             $model = new Booking();
-            if($model->create($data)){
-                $request->event_catalog->move('uploads',$filename);
+            if($model->insert($data)){
+                // $request->event_catalog->move('uploads',$filename);
                 return back()->with('msg','Blog Inserted Successfully');
             }
         }

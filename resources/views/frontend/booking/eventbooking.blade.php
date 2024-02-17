@@ -37,7 +37,7 @@
                         @endif
                         <h2 class="text-center text-lg-start">Event Booking Now</h2>
                         
-                        <form method="post" action="{{route('booking.store')}}" enctype="multipart/form-data">
+        <form method="post" action="{{route('booking.store')}}">
                             @csrf
                             
                             <div class="form-group mb-2">
@@ -56,20 +56,20 @@
                                 <Label>Event Category*</Label>
                                 <input type="text" placeholder="" name="event_category">
                             </div>
-                            <div class="form-group mb-2">
+                            {{-- <div class="form-group mb-2">
                                 <Label>Event Catalog*</Label>
                                 <input type="file" placeholder="" name="event_catalog">
-                            </div>
+                            </div> --}}
                             <div class="form-group mb-2">
                                 <Label>Number of Person*</Label>
                                 <input type="text" placeholder="" name="member">
                             </div>
                             {{-- get customer id --}}
-                            <input type="text" name="customer_id"
+                            <input type="hidden" name="customer_id"
                             value="{{ Auth::guard('customer')->user()->id }}">
 
                         {{-- get Eventtype id --}}
-                        <input type="text" name="eventtype_id"
+                        <input type="hidden" name="eventtype_id"
                             value="{{ $eventtype['id'] }}">
 
                             <div class="form-group mb-2">
@@ -81,9 +81,28 @@
                                <textarea name="address" id="" cols="15" rows="5"></textarea>
                             </div>
                             <div class="form-group mb-2">
+                                <Label> Booking Price 50% only </Label>
+                                <input type="text" name="booking_price" value="{{round($eventtype->price * 0.50)}}">
+                            </div>
+                            <div class="form-group mb-2 d-flex">
+                              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGoz3y6ZkhQWNLCsojJhidOXKd62tjclnjvw&usqp=CAU" alt="" width="50%" height="120px">
+                               <img src="https://play-lh.googleusercontent.com/9GNDxgkN8hWzBub3bYbmFummUAHRFTe0vhLNv8wYL1-ESxKx1zJLL6eGhn8oAWiEZLNj=w600-h300-pc0xffffff-pd" alt="" width="50%" height="120px">
+                            </div>
+                            <div class="form-group mb-2 d-flex justify-content-evenly">
+                          
+                                <input type="radio" name="payment_method" value="bkash"> Bkash
+                                <input type="radio" name="payment_method" value="nagad"> Nagad
+                                
+                             </div>
+                            <div class="form-group mb-2">
+                                <Label>Enter Your Transction ID</Label>
+                                <input type="text" name="t_id">
+                            </div>
+                            
+                            <div class="form-group mb-2">
                                 <input type="submit" class="nir-btn" id="" value="Send Message">
                             </div>
-                           </form>
+        </form>
                     </div>
                        
                 </div>
@@ -91,8 +110,13 @@
                     
            
                 <div class="col-lg-5 ps-lg-4 mb-4">
+
+                    <div class="border border-4 text-center p-1">
+                        <h3 class="text-primary"> Event Total Cost {{round($eventtype->price)}} </h3>
+                        <h3 class="text-primary"> Event Booking price pay Advance only 50%  :  {{round($eventtype->price * 0.35)}} </h3>
+                    </div>
                 
-                    <div class="product-slider position-relative">
+                    <div class="product-slider position-relative mt-4">
                         <div class="slider-for overflow-hidden">
                             <div>
                                 <div class="gallery-item">

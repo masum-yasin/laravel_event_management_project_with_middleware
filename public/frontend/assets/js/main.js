@@ -158,7 +158,7 @@
              $(this).removeClass('open');
          }
      });
-     //Do not include! This prevents the form from submitting for DEMO purposes only!
+    //  Do not include! This prevents the form from submitting for DEMO purposes only!
      $('form').submit(function(event) {
          return true;
      });

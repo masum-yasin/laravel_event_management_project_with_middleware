@@ -16,9 +16,12 @@ return new class extends Migration
              $table->string('customer_name',60);
             $table->string('email',100)->nullable();
             $table->integer('phone_number');
-            $table->string('event_catalog',100)->nullable();
+            // $table->string('event_catalog',100)->nullable();
             $table->string('description',500);
             $table->string('member');
+            $table->string('booking_price');
+            $table->string('payment_method');
+            $table->string('t_id');
             $table->string('event_category',100);
             $table->text('address',200);
             $table->tinyInteger('eventtype_id')->nullable();

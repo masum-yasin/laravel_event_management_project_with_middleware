@@ -10,6 +10,6 @@ class Booking extends Model
     use HasFactory;
     // protected $primaryKey = 'id';
     protected $fillable = [
-        'customer_name','email','phone_number','event_catalog','event_category','description','member','address','status','customer_id','eventtype_id'
+        'customer_name','email','phone_number','event_category','description','member','address','status','customer_id','eventtype_id','booking_price','payment_method','t_id'
     ];
 }
