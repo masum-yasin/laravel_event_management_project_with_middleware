@@ -27,10 +27,7 @@ class EventBookingController extends Controller
     }
     public function store(Request $request){
 
-        // dd($request->all());
-        
-        
-        $validate = $request->validate([
+            $validate = $request->validate([
             'customer_name'=>'required|min:4',
             'email'=>'required|email',
             'phone_number'=>'required|numeric',
@@ -40,7 +37,7 @@ class EventBookingController extends Controller
             'address'=>'required|min:4',
             'event_category'=>'required|min:4',
         ]);
-        $filename = time(). "." . $request->event_catalog->extension();
+        // $filename = time(). "." . $request->event_catalog->extension();
         if($validate){
             $data = [
                 'customer_name'=>$request->customer_name,
@@ -53,8 +50,8 @@ class EventBookingController extends Controller
                 'event_category'=>$request->event_category,
                 'customer_id' => $request->customer_id ,
                 'booking_price' => $request->booking_price ,
-                'payment_method' => $request->eventtype_id ,
-                't_id' => $request->eventtype_id ,
+                'payment_method' => $request->payment_method,
+                't_id' => $request->t_id,
                 
             ];
             // dd($data) ;
