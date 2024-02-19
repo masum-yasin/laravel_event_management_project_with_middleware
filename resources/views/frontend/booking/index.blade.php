@@ -90,7 +90,7 @@
 											<button type="submit">Change</button>
 										</form>
 									</div>
-									<div>
+									<div class="mb-10">
 										<a href="{{route('frontend.booking',$item->id)}}" class="btn btn-sm btn-dark" style="margin-left:10px;"> Delete</a>
 										<a href="{{route('invoiceperid',$item->id)}}" target="_blank" class="btn btn-sm btn-dark" style="margin-left:10px;"> Invoice</a>
 									</div>

@@ -53,7 +53,7 @@ class ScheduleController extends Controller
             'title'=> $request->desc,
            ];
            $mode = new ScheduleEvent();
-           if($mode->insert($data));
+           if($mode->create($data));
            return redirect()->route('schedule.index')->with('msg','Schedule Inserted Successfully');
         }
     }

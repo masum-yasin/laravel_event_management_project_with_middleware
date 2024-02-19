@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('schedule_events', function (Blueprint $table) {
             $table->id();
-            $table->integer('day_number');
-            $table->date('start_time')->nullable(); 
-            $table->date('ending_time')->nullable(); 
+            $table->string('day_number');
+            $table->timestamp('start_time')->nullable(); 
+            $table->timestamp('ending_time')->nullable(); 
             $table->tinyInteger('category_id');
             $table->string('title', 50);
             $table->timestamp('created_at')->useCurrent();

@@ -2,11 +2,13 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\backend\PdfController;
+use App\Http\Controllers\backend\ScheduleController;
 use App\Http\Controllers\EditorController;
 
 
 use App\Http\Controllers\frontend\EventBookingController;
 use App\Http\Controllers\frontend\FrontendHomeController;
+use App\Http\Controllers\frontend\ScheduleController as FrontendScheduleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VolunteerController;
 use Illuminate\Support\Facades\Route;
@@ -44,15 +46,14 @@ Route::get('/frontend/allpost', function () {
 Route::get('/frontend/singlepost', function(){
  return view('frontend.singlepost');
 })->name('singlepost');
-Route::get('/frontend/eventschedule', function(){
-    return view('frontend.eventschedule');
-   })->name('eventschedule');
-   Route::get('/frontend/eventdetail',function(){
-    return view('frontend.eventdetail');
+
+   Route::get('eventdetail',function(){
+    return view('frontend.eventtypedetail');
    })->name('eventdetail');
 //frontend Routes Ending//
 //pass data frontend from backend//
 Route::get('/', [FrontendHomeController::class,'index']);
+Route::get('eventschedule',[FrontendScheduleController::class,'schedule'])->name('eventschedule');
 
 
 // Frontend Booking//

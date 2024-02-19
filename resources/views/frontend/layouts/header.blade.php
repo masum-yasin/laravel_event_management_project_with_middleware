@@ -29,11 +29,11 @@
                             <li><a href="{{route('userreview.create')}}" class="">Review</a></li>
 
                             <li class="submenu dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <i class="fas fa-caret-down ms-1" aria-hidden="true"></i></a> 
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Schedule<i class="fas fa-caret-down ms-1" aria-hidden="true"></i></a> 
                                 <ul class="dropdown-menu">
                                     <li><a href="{{route('eventschedule')}}">Event Schedule</a></li>
-                                    <li><a href="{{route('eventdetail')}}">Event Detail</a></li>
-                                    <li><a href="speakers.html">Speaker Lists</a></li>
+                                    {{-- <li><a href="{{route('eventdetail')}}">Event Detail</a></li> --}}
+                                    {{-- <li><a href="speakers.html">Speaker Lists</a></li>
                                     <li><a href="speaker-detail.html">Speaker Detail</a></li>
                                     <li><a href="sponsors.html">Sponsors</a></li>
                                     <li><a href="pricing.html">Pricing</a></li>
@@ -42,17 +42,10 @@
                                     <li><a href="faq.html">Faq</a></li>
                                     <li><a href="comingsoon.html">Coming Soon</a></li>
                                     <li><a href="search-result.html">Search Result</a></li>
-                                    <li><a href="404.html">404 Error</a></li>
+                                    <li><a href="404.html">404 Error</a></li> --}}
                                 </ul> 
                             </li>
-                            {{-- <li class="submenu dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Shop <i class="fas fa-caret-down ms-1" aria-hidden="true"></i></a> 
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{route('productlist')}}">Product Lists</a></li>
-                                    <li><a href="{{route('productdetail')}}">Product Detail</a></li>
-                                </ul>
-                            </li>
-                            --}}
+                          
                            
                             <li class="submenu dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News <i class="fas fa-caret-down ms-1" aria-hidden="true"></i></a> 
@@ -95,22 +88,8 @@
                         </li>
                  
                         </ul>
-                    </div><!-- /.navbar-collapse -->  
-                   {{-- <div class="register-login">
-                        <a href="" class="nir-btn white">Booking Now<i class="fa fa-angle-right " style="width:20px;"></i></a>
-                    </div> --}}
-                   
-
-                    <div id="slicknav-mobile"></div>
-                    {{-- <div>
-                        <a href="{{route('dashboard')}}" class="btn btn-warning" style="width:100px;">Super Admin</a>
                     </div>
-                    <div>
-                        <a href="{{route('editor_login_form')}}" class="btn btn-warning p-3" style="width:100px; margin:0 3px;">Admin</a>
-                    </div>
-                    <div>
-                        <a href="{{route('admin_login_form')}}" class="btn btn-warning p-3" style="width:100px;">Editor</a>
-                    </div> --}}
+               
 
 
 

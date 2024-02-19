@@ -52,13 +52,13 @@
                         <div class="form-group row">
                             <label class="col-sm-12 col-md-2 col-form-label">Start Time</label>
                                 <div class="col-sm-12 col-md-10">
-                                    <input class="form-control" type="date" placeholder="Event Start Time" name="starttime" value="{{old('starttime')}}">
+                                    <input class="form-control" type="datetime-local" placeholder="Event Start Time" name="starttime" value="{{old('starttime')}}">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-12 col-md-2 col-form-label">Ending Time</label>
                                     <div class="col-sm-12 col-md-10">
-                                        <input class="form-control" type="date" placeholder="Event Ending Time" name="endtime">
+                                        <input class="form-control" type="datetime-local" placeholder="Event Ending Time" name="endtime">
                                     </div>
                                 </div>
                            

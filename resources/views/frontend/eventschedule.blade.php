@@ -36,17 +36,24 @@
             </div>
             
             <div class="schedule-item">
+                @foreach ($schedule as $item)
+                        
                 <div class="about-image-box bg-white mb-4">
+                  
+                    
                     <div class="row">
                         <div class="col-lg-3 d-flex">
                             <div class="about-content text-center text-lg-start p-4 py-8 bg-theme w-100">
-                                <small class="white mb-2">8:00 Am - 9:00 AM</small>
-                                <h4 class="white mb-0">Opening Ceremony</h4>
+                                <h6>Start Time</h6>
+                                <small class="white mb-1">{{$item->start_time}}</small>
+                                <h6>Ending Time</h6>
+                                <small class="white mb-1">{{$item->ending_time}}</small>
+                                <h4 class="white mt-7">{{$item->category->name}}</h4>
                             </div>
                         </div>
                         <div class="col-lg-6 d-flex">
                             <div class="schedule-content text-lg-start text-center py-4">
-                                <h4 class="mb-1"> Introduce the Event</h4>
+                                <h4 class="mb-1">{{$item->title}}</h4>
                                 <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
                                 <ul class="schedule-items d-flex justify-content-lg-start justify-content-center">
                                     <li class="d-flex align-items-center me-4">
@@ -71,116 +78,10 @@
                         </div>
         
                     </div>
+                  
                 </div>
-                <div class="about-image-box bg-white mb-4">
-                    <div class="row">
-                        <div class="col-lg-3 d-flex">
-                            <div class="about-content text-center text-lg-start p-4 py-8 bg-theme3 w-100">
-                                <small class="white mb-2">9:00 Am - 10:00 AM</small>
-                                <h4 class="white mb-0">Greetings Event</h4>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 d-flex">
-                            <div class="schedule-content text-lg-start text-center py-4">
-                                <h4 class="mb-1"> Greetings and Opening Event</h4>
-                                <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                                <ul class="schedule-items d-flex justify-content-lg-start justify-content-center">
-                                    <li class="d-flex align-items-center me-4">
-                                        <i  class="icon-location-pin theme pe-1"></i>
-                                        <span class="theme1">Exploration Hall</span>
-                                    </li>
-                                    <li class="d-flex align-items-center">
-                                        <i  class="icon-location-pin theme pe-1"></i>
-                                        <span class="theme1">Hall 01</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 d-flex">
-                            <div class="schedule-speaker d-lg-flex p-4 align-items-center text-center text-lg-start w-100 border-start">
-                                <img src="{{asset('frontend/assets/images/reviewer/2.jpg')}}" alt="" class="rounded-circle img-circle">
-                                <div class="speaker-content ms-3">
-                                    <h6 class="mb-0 theme">Ricky Malone</h6>
-                                    <small>Host & Speaker</small>
-                                </div>
-                            </div>
-                        </div>
-        
-                    </div>
-                </div>
-                <div class="about-image-box bg-white mb-4">
-                    <div class="row">
-                        <div class="col-lg-3 d-flex">
-                            <div class="about-content text-center text-lg-start p-4 py-8 bg-theme w-100">
-                                <small class="white mb-2">10:00 Am - 10:30 AM</small>
-                                <h4 class="white mb-0">Break And Coffee</h4>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 d-flex">
-                            <div class="schedule-content text-lg-start text-center py-4">
-                                <h4 class="mb-1"> Tea and Coffee Break</h4>
-                                <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                                <ul class="schedule-items d-flex justify-content-lg-start justify-content-center">
-                                    <li class="d-flex align-items-center me-4">
-                                        <i  class="icon-location-pin theme pe-1"></i>
-                                        <span class="theme1">Exploration Hall</span>
-                                    </li>
-                                    <li class="d-flex align-items-center">
-                                        <i  class="icon-location-pin theme pe-1"></i>
-                                        <span class="theme1">Hall 01</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 d-flex">
-                            <div class="schedule-speaker d-lg-flex p-4 align-items-center text-center text-lg-start w-100 border-start">
-                                <img src="{{asset('frontend/assets/images/reviewer/1.jpg')}}" alt="" class="rounded-circle img-circle">
-                                <div class="speaker-content ms-3">
-                                    <h6 class="mb-0 theme">Jesus Holland</h6>
-                                    <small>Host & Speaker</small>
-                                </div>
-                            </div>
-                        </div>
-        
-                    </div>
-                </div>
-                <div class="about-image-box bg-white mb-4">
-                    <div class="row">
-                        <div class="col-lg-3 d-flex">
-                            <div class="about-content text-center text-lg-start p-4 py-8 bg-theme3 w-100">
-                                <small class="white mb-2">10:00 Am - 10:30 AM</small>
-                                <h4 class="white mb-0">Digital Workshop</h4>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 d-flex">
-                            <div class="schedule-content text-lg-start text-center py-4">
-                                <h4 class="mb-1"> Digital Marketing Workshop</h4>
-                                <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                                <ul class="schedule-items d-flex justify-content-lg-start justify-content-center">
-                                    <li class="d-flex align-items-center me-4">
-                                        <i  class="icon-location-pin theme pe-1"></i>
-                                        <span class="theme1">Exploration Hall</span>
-                                    </li>
-                                    <li class="d-flex align-items-center">
-                                        <i  class="icon-location-pin theme pe-1"></i>
-                                        <span class="theme1">Hall 01</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 d-flex">
-                            <div class="schedule-speaker d-lg-flex p-4 align-items-center text-center text-lg-start w-100 border-start">
-                                <img src="{{asset('frontend/assets/images/reviewer/3.jpg')}}" alt="" class="rounded-circle img-circle">
-                                <div class="speaker-content ms-3">
-                                    <h6 class="mb-0 theme">Nelly Bell</h6>
-                                    <small>Speaker</small>
-                                </div>
-                            </div>
-                        </div>
-        
-                    </div>
-                </div>
-            </div>
+                @endforeach
+              </div>
         </div>
     </section>
     <!-- event-schedule ends -->
