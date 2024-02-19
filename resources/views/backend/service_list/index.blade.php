@@ -55,7 +55,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							@foreach ($servicelists as $key=>$servicelist)
+							@forelse ($servicelists as $key=>$servicelist)
 								<tr>
 								<th scope="row">{{++$key}}</th>
 							    <td>{{$servicelist->category->name}}</td>
@@ -79,7 +79,10 @@
                             </form>
 								</td>
 							</tr>
-							@endforeach
+							@empty
+							<h2 class="bg-success p-2 text-white">No Data Found</h2>
+
+							@endforelse
 							
 						</tbody>
 					</table>

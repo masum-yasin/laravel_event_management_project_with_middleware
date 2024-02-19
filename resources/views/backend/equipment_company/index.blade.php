@@ -49,7 +49,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							@foreach ($equipments as $key=>$equipment)
+							@forelse ($equipments as $key=>$equipment)
 								<tr>
 								<th scope="row">{{++$key}}</th>
 							    <td>{{$equipment->company_name}}</td>
@@ -68,7 +68,9 @@
                             </form>
 								</td>
 							</tr>
-							@endforeach
+							@empty
+							<h2 class="bg-success p-2 text-white">No Data Found</h2>
+							@endforelse
 							
 						</tbody>
 					</table>

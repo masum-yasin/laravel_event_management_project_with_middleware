@@ -40,13 +40,12 @@
 								<th scope="col">#ID</th>
 								<th scope="col">Product Name</th>
 								<th scope="col">Description</th>
-								
 								<th scope="col">Category Name</th>
 								<th scope="col">Action</th>
 							</tr>
 						</thead>
 						<tbody>
-							@foreach ($products as $product)
+							@forelse ($products as $product)
 								
 							
 							<tr>
@@ -63,7 +62,8 @@
 									<a href="product/show/{{$product['id']}}"><i class="btn btn-success">View</i></a>
 								</td>
 							</tr>
-							@endforeach
+							@empty
+							<h2 class="bg-success p-2 text-white">No Data Found</h2>@endforelse
 							
 						</tbody>
 					</table>

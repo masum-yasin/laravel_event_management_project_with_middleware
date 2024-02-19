@@ -54,7 +54,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							@foreach ($eventvenus as $key=>$venu)
+							@forelse ($eventvenus as $key=>$venu)
 								
 							
 							<tr>
@@ -77,7 +77,10 @@
                                 </form>
 								</td>
 							</tr>
-							@endforeach
+							@empty
+							<h2 class="bg-success p-2 text-white">No Data Found</h2>
+
+							@endforelse
 							
 						</tbody>
 					</table>

@@ -53,18 +53,16 @@
 							</tr>
 						</thead>
 						<tbody>
-							@foreach ($categories as $item)
-								
-						
-							<tr>
+							@forelse ($categories as $item)
+								<tr>
 								<th scope="row">{{$item['id']}}</th>
 								<td>{{$item['name']}}</td>
 								<td><a href="category/delete/{{$item['id']}}"><i class="btn btn-danger">Delete</i></a>
 									<a href="category/edit/{{$item['id']}}"><i class="btn btn-warning">Edit</i></a></td>
-								
-								
-							</tr>
-							@endforeach
+								</tr>
+								@empty
+								<h2 class="bg-success text-white p-2">No Data Found</h2>
+								@endforelse
 							
 							
 							

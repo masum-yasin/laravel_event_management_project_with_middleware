@@ -47,7 +47,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							@foreach ($schedules as $schedule)
+							@forelse ($schedules as $schedule)
 							<tr>
                                 <th scope="row">{{$schedule['id']}}</th>
                                 <td>{{$schedule->category->name}}</td>
@@ -66,7 +66,8 @@
                                 </form>
                                     </td>
 							</tr>
-							@endforeach
+							@empty
+							<h2 class="bg-success p-2 text-white">No Data Found</h2>@endforelse
 							
 						</tbody>
 					</table>

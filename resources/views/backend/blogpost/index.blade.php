@@ -52,7 +52,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							@foreach ($blogs as $key=>$blog)
+							@forelse ($blogs as $key=>$blog)
 								
 							
 							<tr>
@@ -73,7 +73,9 @@
                                 </form>
 								</td>
 							</tr>
-							@endforeach
+							@empty
+							<h2 class="bg-success text-white">No Data Found</h2>
+							@endforelse
 							
 						</tbody>
 					</table>

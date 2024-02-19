@@ -46,7 +46,7 @@
 								</tr>
 						</thead>
 						<tbody>
-							@foreach ($reviews as $key=>$review)
+							@forelse ($reviews as $key=>$review)
 								<tr>
 								<th scope="row">{{++$key}}</th>
 							    <td>{{$review->review_title}}</td>
@@ -72,7 +72,8 @@
                                 </form>
 								</td>
 							</tr>
-							@endforeach
+							@empty
+							<h2 class="bg-success p-2 text-white">No Data Found</h2>@endforelse
 							</tbody>
 					</table>
 					

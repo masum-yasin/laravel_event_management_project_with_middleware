@@ -31,9 +31,9 @@
                     </h2>
                 </div>
             </div>
-    <h1> My Bookings </h1>
-    <table class="table">
-        <h6>Customer Detail</h6>
+              <h1> My Bookings </h1>
+              <table class="table">
+                  <h6>Customer Detail</h6>
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -92,19 +92,11 @@
                  
                 </tbody>
               </table>
-
-
-
-
-
-
-
-
-                            
+              <button>Show Invoice</button>
+            </div>
                 </div>
                 </div>
-                </div>
- </div>
+              </div>
         </div>
     </div>
 </section>

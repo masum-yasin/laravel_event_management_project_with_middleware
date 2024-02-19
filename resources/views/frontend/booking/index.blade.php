@@ -59,7 +59,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							@foreach ($bookings as $key=>$item)
+							@forelse ($bookings as $key=>$item)
 							<tr>
 								<th scope="row">{{++$key}}</th>
 								<td>{{$item->customer_name}}</td>
@@ -98,7 +98,10 @@
                                 
 								</td>
 							</tr>
-							@endforeach
+							@empty
+							<h2 class="bg-success p-2 text-white">No Data Found</h2>
+
+							@endforelse
 							
 						</tbody>
 					</table>

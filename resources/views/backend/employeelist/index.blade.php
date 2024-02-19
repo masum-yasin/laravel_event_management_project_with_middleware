@@ -54,7 +54,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							@foreach ($employlist as $key =>$employee)
+							@forelse ($employlist as $key =>$employee)
 								
 							
 							<tr>
@@ -76,7 +76,10 @@
 								<a href="{{route('employeelist.show',$employee->id)}}" class="btn btn-sm btn-success">View</a>
 								</td>
 							</tr>
-							@endforeach
+							@empty
+							<h2 class="bg-success p-2 text-white">No Data Found</h2>
+							@endforelse
+						
 							
 						</tbody>
 					</table>

@@ -55,7 +55,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							@foreach ($speakers as $key=>$speaker)
+							@forelse ($speakers as $key=>$speaker)
 								<tr>
 								<th scope="row">{{++$key}}</th>
 								<td>{{$speaker->category->name}}</td>
@@ -77,7 +77,10 @@
                                 </form>
 								</td>
 							</tr>
-							@endforeach
+							@empty
+							<h2 class="bg-success p-2 text-white">No Data Found</h2>
+
+							@endforelse
 							
 						</tbody>
 					</table>
