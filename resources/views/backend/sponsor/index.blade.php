@@ -7,7 +7,7 @@
 				<div class="page-header">
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
-                            <a href="{{route('eventtype.create')}}" class="btn btn-sm btn-success mb-3" style="float: right">Add Sponsor</a>
+                            <a href="{{route('sponsor.create')}}" class="btn btn-sm btn-success mb-3" style="float: right">Add Sponsor</a>
 							<div class="title">
 								<h4>Categories List</h4>
 							</div>

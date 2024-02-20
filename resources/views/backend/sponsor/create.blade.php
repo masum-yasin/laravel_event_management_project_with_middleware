@@ -7,7 +7,7 @@
 				<!-- Default Basic Forms Start -->
 				<div class="pd-20 card-box mb-30">
 					<div class="clearfix">
-                        <a href="{{route('blogpost.index')}}" class="btn btn-sm btn-success mb-3" style="float: right">ALL Sponsor List</a>
+                        <a href="{{route('sponsor.index')}}" class="btn btn-sm btn-success mb-3" style="float: right">ALL Sponsor List</a>
 						<div class="pull-left">
 							<h4 class="text-blue h4">NEW Event Sponsor From</h4>
 					</div>

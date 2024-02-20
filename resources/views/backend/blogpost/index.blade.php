@@ -7,7 +7,7 @@
 				<div class="page-header">
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
-                            <a href="{{route('eventtype.create')}}" class="btn btn-sm btn-success mb-3" style="float: right">Add Event Type</a>
+                            <a href="{{route('blogpost.create')}}" class="btn btn-sm btn-success mb-3" style="float: right">Add Blog Post</a>
 							<div class="title">
 								<h4>Categories List</h4>
 							</div>
