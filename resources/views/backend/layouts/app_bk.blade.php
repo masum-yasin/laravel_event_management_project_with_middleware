@@ -37,13 +37,14 @@
 	@include('backend.layouts.header')
 
 	{{-- @include('backend.layouts.rightsidebar') --}}
-	@include('backend.layouts.adminleftsidebar')
+	@include('backend.layouts.leftsidebar')
 	<div class="mobile-menu-overlay"></div>
 	@yield('content')
 
 
 	@include('backend.layouts.footer')
 	<!-- js -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 	<script src="{{asset('assets/vendors/scripts/core.js')}}"></script>
 	<script src="{{asset('assets/vendors/scripts/script.min.js')}}"></script>
 	<script src="{{asset('assets/vendors/scripts/process.js')}}"></script>

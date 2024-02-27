@@ -52,7 +52,7 @@ Route::middleware('guest')->group(function () {
                 ->name('password.store');
 });
 
-// Route::middleware('auth')->group(function () {
+Route::middleware('auth')->group(function () {
     Route::get('verify-email', EmailVerificationPromptController::class)
                 ->name('verification.notice');
 
@@ -73,6 +73,9 @@ Route::middleware('guest')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
+
+});
+
                 // product Routing Start//
                 Route::get('product',[ProductController::class,'index'])->name('product.index');
                 Route::get('product/show/{id}',[ProductController::class,'show'])->name('product.show');
@@ -85,7 +88,7 @@ Route::middleware('guest')->group(function () {
 
 
                 // Category Routing Start//
-                Route::get('category',[CategoryController::class,'index'])->name('category.index');
+                Route::get('/category',[CategoryController::class,'index'])->name('category.index');
                 Route::get('category/create',[CategoryController::class,'create'])->name('category.create');
                 Route::post('category/store',[CategoryController::class,'store'])->name('category.store');
                 Route::get('category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
@@ -134,5 +137,5 @@ Route::middleware('guest')->group(function () {
         Route::resource('servicelist',EquipmentServiceController::class);
 
 
-// });
+
     

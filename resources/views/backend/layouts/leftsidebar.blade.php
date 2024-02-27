@@ -8,179 +8,245 @@
             <i class="ion-close-round"></i>
         </div>
     </div>
+    {{-- @if (Auth::guard('admin')->check()) --}}
     <div class="menu-block customscroll">
         <div class="sidebar-menu">
+            {{-- =========================Admin Authentication================ --}}
+            {{-- @if (Auth::guard('admin')->check()) --}}
+            @if (Auth::guard('admin')->check())
             <ul id="accordion-menu">
                 <li class="dropdown">
-                    <li>
-                        <a href="sitemap.html" class="dropdown-toggle no-arrow">
-                            <span class="micon dw dw-diagram"></span><span class="mtext">Home</span>
-                        </a>
-                    </li>
-                  
-                </li>
-              
-                     <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-copy"></span><span class="mtext">Event Type</span>
+                        <span class="micon dw dw-house-1"></span><span class="mtext">Event Category</span>
                     </a>
                     <ul class="submenu">
                         <li><a href="{{route('category.index')}}">All  Event</a></li>
                         <li><a href="{{route('category.create')}}">New Event Add</a></li>
-                        
-                       
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-copy"></span><span class="mtext">Products Type of Event</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="{{route('product.index')}}">All Event Product</a></li>
-                        <li><a href="{{route('product.create')}}">New Event Product</a></li>
-                        
-                       
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
+                    <a href="#" class="dropdown-toggle">
                         <span class="micon dw dw-copy"></span><span class="mtext">Equipment Company</span>
                     </a>
                     <ul class="submenu">
                         <li><a href="{{route('company.index')}}">All Equipment Company</a></li>
                         <li><a href="{{route('company.create')}}">Equipment Company Add</a></li>
-                        
-                       
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
+                        </ul>
+                     </li>
+                        <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">
                         <span class="micon dw dw-copy"></span><span class="mtext">Equipment Service</span>
-                    </a>
-                    <ul class="submenu">
+                        </a>
+                        <ul class="submenu">
                         <li><a href="{{route('servicelist.index')}}">All Equipment Servicelist</a></li>
                         <li><a href="{{route('servicelist.create')}}">Add Service List</a></li>
-                        
-                       
-                    </ul>
-                </li>
-              
-             
+                        </ul>
+                        </li>   
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                <span class="micon dw dw-copy"></span><span class="mtext">Event Schedule</span>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="{{route('schedule.create')}}">New Schedule Add</a></li>
+                                <li><a href="{{route('schedule.index')}}">All Event Schedule</a></li>
+                                </ul>
+                        </li>
+                            <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                <span class="micon dw dw-copy"></span><span class="mtext">Blog Post</span>
+                                </a>
+                                <ul class="submenu">
+                                <li><a href="{{route('blogpost.create')}}">Add Blog Post</a></li>
+                                <li><a href="{{route('blogpost.index')}}">All Blog List</a></li>
+                                </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                <span class="micon dw dw-copy"></span><span class="mtext">Sponsor Company</span>
+                                </a>
+                                <ul class="submenu">
+                                <li><a href="{{route('sponsor.create')}}">Add Sponsor Detail</a></li>
+                                <li><a href="{{route('sponsor.index')}}">All Sponsor List</a></li>
+                            </ul>
+                        </li>
+                     </ul> 
+                     {{-- =================Editor Authencation=============== --}}
+                     @elseif(Auth::guard('editor')->check())
+                     <ul id="accordion-menu">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                <span class="micon dw dw-house-1"></span><span class="mtext">Event Category</span>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="{{route('category.index')}}">All  Event</a></li>
+                                <li><a href="{{route('category.create')}}">New Event Add</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">
+                                <span class="micon dw dw-copy"></span><span class="mtext">Event Schedule</span>
+                            </a>
+                            <ul class="submenu">
+                                <li><a href="{{route('schedule.create')}}">New Schedule Add</a></li>
+                                <li><a href="{{route('schedule.index')}}">All Event Schedule</a></li>
+                                </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle">
+                                        <span class="micon dw dw-copy"></span><span class="mtext">Event Review</span>
+                                    </a>
+                                    <ul class="submenu">
+                                        <li><a href="{{route('userreview.index')}}">All Review</a></li>
+                                       
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle">
+                                        <span class="micon dw dw-copy"></span><span class="mtext">Blog Post</span>
+                                    </a>
+                                    <ul class="submenu">
+                                        <li><a href="{{route('blogpost.create')}}">Add Blog Post</a></li>
+                                        <li><a href="{{route('blogpost.index')}}">All Blog List</a></li>
+                                        </ul>
+                                         </li>
+                                </ul>  
+                                 {{--========================Volenteer===================  --}}
+                                @elseif(Auth::guard('volunteer')->check())
+                                    <ul id="accordion-menu">
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle">
+                                                <span class="micon dw dw-copy"></span><span class="mtext">Employee List</span>
+                                            </a>
+                                            <ul class="submenu">
+                                                {{-- <li><a href="{{route('employeelist.create')}}">Add Employee </a></li> --}}
+                                                <li><a href="{{route('employeelist.index')}}">All Employee List</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                               
+             @else
+            <ul id="accordion-menu">
                 <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-copy"></span><span class="mtext">Employee List</span>
+                    <a href="#" class="dropdown-toggle">
+                        <span class="micon dw dw-house-1"></span><span class="mtext">Event Category</span>
                     </a>
                     <ul class="submenu">
-                        <li><a href="{{route('employeelist.create')}}">Add Employee </a></li>
-                        <li><a href="{{route('employeelist.index')}}">All Employee List</a></li>
-                        
-                       
+                        <li><a href="{{route('category.index')}}">All  Event</a></li>
+                        <li><a href="{{route('category.create')}}">New Event Add</a></li>
                     </ul>
                 </li>
-                {{-- Schedule Routing --}}
                 <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
+                    <a href="#" class="dropdown-toggle">
+                        <span class="micon dw dw-house-1"></span><span class="mtext">Event Product</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{route('product.index')}}">All Event Product</a></li>
+                        <li><a href="{{route('product.create')}}">New Event Product</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">
+                        <span class="micon dw dw-house-1"></span><span class="mtext">Equipment Company</span>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="{{route('company.index')}}">All Equipment Company</a></li>
+                        <li><a href="{{route('company.create')}}">Equipment Company Add</a></li>
+                        </ul>
+                     </li>
+                     <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">
+                            <span class="micon dw dw-copy"></span><span class="mtext">Employee List</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="{{route('employeelist.create')}}">Add Employee </a></li>
+                            <li><a href="{{route('employeelist.index')}}">All Employee List</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">
                         <span class="micon dw dw-copy"></span><span class="mtext">Event Schedule</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="{{route('schedule.create')}}">New Schedule Add</a></li>
-                        <li><a href="{{route('schedule.index')}}">All Event Schedule</a></li>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="{{route('schedule.create')}}">New Schedule Add</a></li>
+                            <li><a href="{{route('schedule.index')}}">All Event Schedule</a></li>
                         </ul>
-                </li>
-                {{-- Event Venu Routin --}}
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-copy"></span><span class="mtext">Event Venu Detail</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="{{route('eventvenues.create')}}">New Event Venu Add</a></li>
-                        <li><a href="{{route('eventvenues.index')}}">All Event Venu</a></li>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="micon dw dw-copy"></span><span class="mtext">Event Venu Detail</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="{{route('eventvenues.create')}}">New Event Venu Add</a></li>
+                            <li><a href="{{route('eventvenues.index')}}">All Event Venu</a></li>
+                            </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="micon dw dw-copy"></span><span class="mtext">Blog Post</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="{{route('blogpost.create')}}">Add Blog Post</a></li>
+                            <li><a href="{{route('blogpost.index')}}">All Blog List</a></li>
+                            </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="micon dw dw-copy"></span><span class="mtext">Sponsor Company</span>
+                            </a>
+                            <ul class="submenu">
+                            <li><a href="{{route('sponsor.create')}}">Add Sponsor Detail</a></li>
+                            <li><a href="{{route('sponsor.index')}}">All Sponsor List</a></li>
                         </ul>
-                </li>
-
-
-                {{-- Event Type --}}
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-copy"></span><span class="mtext">Event Type</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="{{route('eventtype.create')}}">Add Event Type</a></li>
-                        <li><a href="{{route('eventtype.index')}}">All Event List</a></li>
-                        
-                       
-                    </ul>
-                </li>
-                {{-- BlogPost Routing --}}
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-copy"></span><span class="mtext">Blog Post</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="{{route('blogpost.create')}}">Add Blog Post</a></li>
-                        <li><a href="{{route('blogpost.index')}}">All Blog List</a></li>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="micon dw dw-copy"></span><span class="mtext">Event Speaker</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="{{route('eventspeaker.create')}}">Add Speaker</a></li>
+                            <li><a href="{{route('eventspeaker.index')}}">All Event Speaker</a></li>
                         </ul>
-                </li>
-                {{-- Sponsor Routing Start --}}
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-copy"></span><span class="mtext">Sponsor Company</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="{{route('sponsor.create')}}">Add Sponsor Detail</a></li>
-                        <li><a href="{{route('sponsor.index')}}">All Sponsor List</a></li>
-                    </ul>
-                </li>
-                {{-- Speaker Routing --}}
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-copy"></span><span class="mtext">Event Speaker</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="{{route('eventspeaker.create')}}">Add Event Speaker</a></li>
-                        <li><a href="{{route('eventspeaker.index')}}">All Event Speaker</a></li>
-                    </ul>
-                </li>
-                {{-- Booking Routing --}}
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-copy"></span><span class="mtext">Event Booking</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="{{route('booking.index')}}">All Booking</a></li>
-                       
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-copy"></span><span class="mtext">Event Review</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="{{route('userreview.index')}}">All Review</a></li>
-                       
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle">
-                        <span class="micon dw dw-copy"></span><span class="mtext">User Contact</span>
-                    </a>
-                    <ul class="submenu">
-                        <li><a href="{{route('contact.index')}}">All Review</a></li>
-                       
-                    </ul>
-                </li>
-              
-               
-                
-               
-                
-                <li>
-                    <a href="https://dropways.github.io/deskapp-free-single-page-website-template/" target="_blank" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-paper-plane1"></span>
-                        <span class="mtext">Landing Page <img src="assets/vendors/images/coming-soon.png" alt="" width="25"></span>
-                    </a>
-                </li>
-            </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="micon dw dw-copy"></span><span class="mtext">Event Booking</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="{{route('booking.index')}}">All Booking</a></li>
+                           
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="micon dw dw-copy"></span><span class="mtext">Event Speaker</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="{{route('eventspeaker.create')}}">Add Speaker</a></li>
+                            <li><a href="{{route('eventspeaker.index')}}">All Event Speaker</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="micon dw dw-copy"></span><span class="mtext">Event Review</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="{{route('userreview.index')}}">All Review</a></li>
+                           
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="micon dw dw-copy"></span><span class="mtext">User Contact</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="{{route('contact.index')}}">All Contact</a></li>
+                           </ul>
+                    </li>
+                    </ul>   
+            @endif
+            
+            
         </div>
     </div>
+   
 </div>

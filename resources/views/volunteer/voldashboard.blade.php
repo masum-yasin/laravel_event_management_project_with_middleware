@@ -1,4 +1,4 @@
-@extends('backend.layouts.volunteerApp')
+@extends('backend.layouts.app')
 @section('title','Home:admin')
 @section('content')
 <div class="main-container">

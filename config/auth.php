@@ -54,7 +54,7 @@ return [
         ],
         'customer' => [
             'driver' => 'session',
-            'provider' => 'volunteers',
+            'provider' => 'customers',
         ],
     ],
 
@@ -92,7 +92,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Volunteer::class,
         ],
-        'volunteers' => [
+        'customers' => [
             'driver' => 'eloquent',
             'model' => App\Models\Customer::class,
         ],

@@ -85,7 +85,8 @@ Route::middleware('auth')->group(function () {
 // middleware editor dashboard//
 Route::get('editor/login',[EditorController::class,'login'])->name('editor_login_form');
 Route::post('editor/login',[EditorController::class,'store'])->name('EditorLogin');
-Route::get('editor/edashobard/{type}',[EditorController::class,'edashboard'])->name('editor.edashboard')->middleware('editor');
+Route::post('editor/logout',[EditorController::class,'destroy'])->name('editor.logout');
+Route::get('editor/edashobard',[EditorController::class,'edashboard'])->name('editor.edashboard')->middleware('editor');
 
 
 
@@ -93,14 +94,20 @@ Route::get('editor/edashobard/{type}',[EditorController::class,'edashboard'])->n
 //Admin MiddleWare//
 Route::get('admin/login',[AdminController::class,'login'])->name('admin_login_form');
 Route::post('admin/store',[AdminController::class,'store'])->name('AdminLogin');
-Route::get('admin/dashboard/{type}',[AdminController::class,'adashboard'])->name('admin.dashboard')->middleware('admin');
+Route::post('admin/logout', [AdminController::class, 'destroy'])->name('admin.logout');
+Route::get('admin/dashboard',[AdminController::class,'adashboard'])->name('admin.dashboard')->middleware('admin');
+
 
 
 
 // Volunteer Middleware
 Route::get('volunteer/login',[VolunteerController::class,'login'])->name('volunteer_login_form');
 Route::post('volunteer/store',[VolunteerController::class,'store'])->name('volunteerLogin');
-Route::get('volunteer/voldashboard/{type}',[VolunteerController::class,'voldashboard'])->name('volunteer.voldashboard')->middleware('volunteer');
+Route::get('volunteer/voldashboard',[VolunteerController::class,'voldashboard'])->name('volunteer.voldashboard')->middleware('volunteer');
+
+
+
+
 
 Route::get('invoice',[PdfController::class,'generate_pdf']);
 Route::get('invoice/{id}',[PdfController::class,'generate_pdf'])->name('invoiceperid');

@@ -13,19 +13,22 @@ class EditorController extends Controller
    
    public function store(Request $request){
     $euser = $request->all();
-    $type = 'editor';
+   
     if(Auth::guard('editor')->attempt(['email'=>$euser['email'],'password'=>$euser['password']])){
-        return redirect()->route('editor.edashboard', $type);
+        return redirect()->route('editor.edashboard');
     }
     else{
-        return view('editor.login');
+        return redirect()->route('editor_login_form');
     }
 }
    
-   public function edashboard($type){
-    //echo $type;
-    $user = Auth::guard($type)->user();
-    //dd($user);
-    return view('editor.edashboard', compact('user'));
+   public function edashboard(){
+   
+    return view('editor.edashboard');
    }
+   public function destroy(){
+    Auth::guard('editor')->logout();
+    // dd(session()->all());
+    return redirect()->route('editor_login_form');
+}
 }

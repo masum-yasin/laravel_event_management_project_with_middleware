@@ -21,20 +21,21 @@ class VolunteerController extends Controller
     public function store(Request $request)
     {
         $volunteer = $request->all();
-        $type = 'volunteer';
+        // dd($volunteer);
+   
         if(Auth::guard('volunteer')->attempt(['email'=>$volunteer['email'],'password'=> $volunteer['password']])){
-            return redirect()->route('volunteer.voldashboard',$type);
+            return redirect()->route('volunteer.voldashboard');
         }
         else{
-            return view('volunteer.login');
+           return redirect()->route('volunteer_login_form');
         }
     }
 
    
-    public function voldashboard($type)
+    public function voldashboard()
     {
-        $user = Auth::guard($type)->user();
-        return view('volunteer.voldashboard',compact('user'));
+      
+        return view('volunteer.voldashboard');
     }
 
     /**

@@ -108,22 +108,56 @@
                 <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                     <span class="user-icon">
                         <img src="{{asset('assets/vendors/images/photo1.jpg')}}" alt="">
+                        @if(Auth::guard('admin')->check())
+                        <span>
+                          
+                            <a href="/admin/dashboard" class="bg-success text-uppercase text-white inline-block">Admin</a>
+                            {{-- Editor --}}
+
+
+                            @elseif (Auth::guard('editor')->check())
+                            <a href="/editor/edashboard" class="bg-success text-uppercase text-white inline-block">Editor</a>
+                            {{-- volenter --}}
+                            @elseif(Auth::guard('volunteer')->check())
+                            <a href="volunteer/voldashboard" class="bg-success text-uppercase text-white inline-block">volunteer</a>
+                        
+                             @else
+                             <a href="/dashboard" class="bg-success text-uppercase text-white inline-block">Super Admin</a>
+                              </span>
+                             @endif
                     </span>
-                    <span class="user-name">
-                        {{$user->name ?? auth()->user()->name}}
-                       
-                    </span>
+                   
+                    
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                     <a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
                     <a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
                     <a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a>
-                   <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <a class="dropdown-item" ><i class="dw dw-logout"></i>
-                        <button class="btn btn-danger">Log Out
-                        </button></a>
-                   </form>
+                    @if(Auth::guard('admin')->check())
+                    <form method="POST" action="{{ route('admin.logout') }}">
+                        @csrf
+                        <a class="dropdown-item" >
+                            <i class="dw dw-logout"></i>
+                            <button class="btn btn-danger">Log Out</button>
+                        </a>
+                    </form>
+                    @elseif(Auth::guard('editor')->check())
+                    <form method="POST" action="{{ route('editor.logout') }}">
+                        @csrf
+                        <a class="dropdown-item" >
+                            <i class="dw dw-logout"></i>
+                            <button class="btn btn-danger">Log Out</button>
+                        </a>
+                    </form>
+                @else
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <a class="dropdown-item" >
+                            <i class="dw dw-logout"></i>
+                            <button class="btn btn-danger">Log Out</button>
+                        </a>
+                    </form>
+                @endif
                 </div>
             </div>
         </div>

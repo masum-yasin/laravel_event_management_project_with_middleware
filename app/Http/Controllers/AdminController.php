@@ -13,16 +13,24 @@ class AdminController extends Controller
     }
     public function store(Request $request){
         $admin = $request->all();
-        $type = 'admin';
+      
+     
         if(Auth::guard('admin')->attempt(['email'=>$admin['email'], 'password'=>$admin['password']])){
-            return redirect()->route('admin.dashboard',$type);
+            //    dd(session()->all());
+
+            return redirect()->route('admin.dashboard');
         }
         else{
-            return view('admin.login');
+            return redirect()->route('admin_login_form');
         }
     }
-    public function adashboard($type){
-        $user = Auth::guard($type)->user();
-        return view('admin.dashboard',compact('user'));
+    public function adashboard(){
+       
+        return view('admin.dashboard');
+    }
+    public function destroy(){
+        Auth::guard('admin')->logout();
+        // dd(session()->all());
+        return redirect()->route('admin_login_form');
     }
 }
